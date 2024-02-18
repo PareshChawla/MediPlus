@@ -19,10 +19,10 @@ const Header = () => {
 
   const handleCloseClick = () => {
     setMenu(false);
-  }
+  };
   return (
     <>
-      <div className="lg:w-full flex justify-between md:h-[10vh] h-[8vh] items-center m-2 lg:p-2">
+      <div className="flex justify-between md:h-[9vh] h-[8vh] items-center m-2 lg:p-2">
         <div>
           <Link to="/">
             <img className="h-12 mt-2 md:h-14 md:mt-4" src={logo} alt="logo" />
@@ -32,11 +32,21 @@ const Header = () => {
           <Link to="/">
             <li className="hover:text-blue-400">HOME</li>
           </Link>
-          <Link to="/about"><li className="hover:text-blue-400">ABOUT US</li></Link>
-          <Link to="products"><li className="hover:text-blue-400">PRODUCTS</li></Link>
-          <Link to="/stores"><li className="hover:text-blue-400">OUR STORES</li></Link>
-          <Link to="blogs"><li className="hover:text-blue-400">BLOGS</li></Link>
-          <Link to="/contact"><li className="hover:text-blue-400">CONTACT US</li></Link>
+          <Link to="/about">
+            <li className="hover:text-blue-400">ABOUT US</li>
+          </Link>
+          <Link to="products">
+            <li className="hover:text-blue-400">PRODUCTS</li>
+          </Link>
+          <Link to="/stores">
+            <li className="hover:text-blue-400">OUR STORES</li>
+          </Link>
+          <Link to="blogs">
+            <li className="hover:text-blue-400">BLOGS</li>
+          </Link>
+          <Link to="/contact">
+            <li className="hover:text-blue-400">CONTACT US</li>
+          </Link>
         </ul>
         <h1 className="hidden md:block font-semibold text-red-500 mr-10 hover:text-green-500 cursor-pointer">
           Upload Prescription
@@ -52,37 +62,49 @@ const Header = () => {
           <BiLogoYoutube size={18} />
         </div>
         <div
-          className="lg:hidden flex bg-gray-200 items-center gap-2 m-2 p-2"
+          className="lg:hidden flex bg-gray-200 rounded-sm items-center gap-2 m-2 p-2 cursor-pointer"
           onClick={handleMenuClick}
         >
           <GiHamburgerMenu />
-          <h1>Menu</h1>
+          <h1 className="text-xs hover:text-green-500">MENU</h1>
         </div>
       </div>
       {menu && (
-        <div className="lg:hidden block bg-[#121519fa] h-[100vh] w-[40%] top-0 right-0 absolute animate">
-          <div className="flex mr-2 p-2 justify-end" onClick={handleCloseClick}>
+        <div className="lg:hidden block fixed bg-[#121519fa] h-[100vh] w-[40%] top-0 right-0 z-10 animate">
+          <div className="flex mr-2 p-2 justify-end cursor-pointer" onClick={handleCloseClick}>
             <IoIosClose color="white" />
           </div>
-          <div className="flex flex-col justify-center items-start w-full text-white text-xl p-5">
-            <h1 className="hover:text-green-500 py-2 border-t-2 border-gray-700 w-full">
-              Home
-            </h1>
-            <h1 className="hover:text-green-500 py-2 border-t-2 border-gray-700 w-full">
-              About Us
-            </h1>
-            <h1 className="hover:text-green-500 py-2 border-t-2 border-gray-700 w-full">
-              Products
-            </h1>
-            <h1 className="hover:text-green-500 py-2 border-t-2 border-gray-700 w-full">
-              Our Stores
-            </h1>
-            <h1 className="hover:text-green-500 py-2 border-t-2 border-gray-700 w-full">
-              Blogs
-            </h1>
-            <h1 className="hover:text-green-500 py-2 border-t-2 border-b-2 border-gray-700 w-full">
-              Contact Us
-            </h1>
+          <div className="flex flex-col justify-center items-start w-full text-white text-xl p-5 cursor-pointer">
+            <Link className="border-t-2 border-gray-700 w-full" to="/">
+              <h1 className="hover:text-green-500 py-2 w-full">
+                Home
+              </h1>
+            </Link>
+            <Link className="border-t-2 border-gray-700 w-full" to="/about">
+              <h1 className="hover:text-green-500 py-2 w-full">
+                About Us
+              </h1>
+            </Link>
+            <Link className="border-t-2 border-gray-700 w-full" to="/products">
+              <h1 className="hover:text-green-500 py-2 w-full">
+                Products
+              </h1>
+            </Link>
+            <Link className="border-t-2 border-gray-700 w-full" to="/stores">
+              <h1 className="hover:text-green-500 py-2 w-full">
+                Our Stores
+              </h1>
+            </Link>
+            <Link className="border-t-2 border-gray-700 w-full" to="/blogs">
+              <h1 className="hover:text-green-500 py-2">
+                Blogs
+              </h1>
+            </Link>
+            <Link className="border-b-2 border-t-2 border-gray-700 w-full" to="/contact">
+              <h1 className="hover:text-green-500 py-2 w-full">
+                Contact Us
+              </h1>
+            </Link>
           </div>
         </div>
       )}
@@ -90,4 +112,4 @@ const Header = () => {
   );
 };
 
-export default Header
+export default Header;
