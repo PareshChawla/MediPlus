@@ -55,11 +55,11 @@ const Header = () => {
           <div className="mr-3">
             <RiSearchLine size={20} />
           </div>
-          <BiLogoFacebookCircle size={18} />
-          <FaSquareXTwitter size={18} />
-          <BiLogoInstagramAlt size={18} />
-          <BiLogoLinkedinSquare size={18} />
-          <BiLogoYoutube size={18} />
+          <BiLogoFacebookCircle size={18} className="hover:text-green-400 cursor-pointer"/>
+          <FaSquareXTwitter size={18} className="hover:text-green-400 cursor-pointer"/>
+          <BiLogoInstagramAlt size={18} className="hover:text-green-400 cursor-pointer"/>
+          <BiLogoLinkedinSquare size={18} className="hover:text-green-400 cursor-pointer"/>
+          <BiLogoYoutube size={18} className="hover:text-green-400 cursor-pointer"/>
         </div>
         <div
           className="lg:hidden flex bg-gray-200 rounded-sm items-center gap-2 m-2 p-2 cursor-pointer"
