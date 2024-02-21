@@ -9,9 +9,18 @@ import CardFullfillment from "./CardFullfillment";
 const About = () => {
   return (
     <>
-      <section className="bg-fixed relative grid place-items-center h-96 uppercase text-5xl font-bold bg-[url(/src/assets/images/Pharmacist_Behind.jpg)]">
-        <div className="absolute top-0 left-0 w-full h-full opacity-50 bg-gradient-to-b from-[#0084D6] to-black"></div>
-        <h2 className=" text-white z-[2]">About Us</h2>
+      <section className="bg-fixed bg-center bg-cover relative grid place-items-center  min-h-[460px] uppercase text-5xl font-bold bg-[url(/src/assets/images/Pharmacist_Behind.jpg)]">
+        <div
+          style={{
+            backgroundColor: "transparent",
+            backgroundImage:
+              "linear-gradient(180deg, #0084D6 -50%, #000000 100%)",
+            opacity: 0.49,
+            transition: "background 0.3s, border-radius 0.3s, opacity 0.3s",
+          }}
+          className="absolute top-0 left-0 w-full h-full opacity-50 "
+        ></div>
+        <h1 className=" text-white z-[2] text-[40px]">About Us</h1>
       </section>
       <div className="mb-5 m-2 px-4 pt-3 lg:m-3 lg:px-24">
         <div className="flex flex-col md:flex-row gap-10 ">
@@ -21,7 +30,7 @@ const About = () => {
             alt="about us"
           />
           <div>
-            <h1 className="font-bold text-4xl mt-0 text-[#3470a1] text-left mt-8">
+            <h1 className="font-bold text-4xl  text-[#3470a1] text-left">
               ABOUT US
             </h1>
             <div className="text-[#434f58] flex flex-col gap-5 mt-5">
@@ -84,27 +93,27 @@ const About = () => {
         </div>
       </div>
       <div className="m-5 my-10 lg:px-20 p-5 grid lg:flex gap-10 lg:justify-around">
-      <CardFullfillment
-        logo={<FaShippingFast size={60} color="#6CB250" />}
-        title={"Free Shipping"}
-        content={
-          "We believe in making your shopping experience as seamless and cost-effective as possible. Enjoy Free Shipping on All Orders!"
-        }
-      />
-            <CardFullfillment
-        logo={<FaAmazonPay size={60} color="#6CB250"/>}
-        title={"Secure Payment"}
-        content={
-          "We at Mediplus recognize the value of safe online transactions. You can be confident that we have taken strong precautions to safeguard your credit card information."
-        }
-      />
-            <CardFullfillment
-        logo={<FaRegComments size={60} color="#6CB250"/>}
-        title={"24/7 Customer Support"}
-        content={
-          "Our staff is available to offer you timely and dependable service at any time. We are interested in your experience."
-        }
-      />
+        <CardFullfillment
+          logo={<FaShippingFast size={60} color="#6CB250" />}
+          title={"Free Shipping"}
+          content={
+            "We believe in making your shopping experience as seamless and cost-effective as possible. Enjoy Free Shipping on All Orders!"
+          }
+        />
+        <CardFullfillment
+          logo={<FaAmazonPay size={60} color="#6CB250" />}
+          title={"Secure Payment"}
+          content={
+            "We at Mediplus recognize the value of safe online transactions. You can be confident that we have taken strong precautions to safeguard your credit card information."
+          }
+        />
+        <CardFullfillment
+          logo={<FaRegComments size={60} color="#6CB250" />}
+          title={"24/7 Customer Support"}
+          content={
+            "Our staff is available to offer you timely and dependable service at any time. We are interested in your experience."
+          }
+        />
       </div>
     </>
   );
