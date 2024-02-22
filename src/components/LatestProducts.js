@@ -1,0 +1,72 @@
+import React, { useState } from "react";
+import EnergyDrinks from "./homeLatestProducts/EnergyDrinks";
+import HerbalPreparations from "./homeLatestProducts/HerbalPreparations";
+import HealthSupplements from "./homeLatestProducts/HealthSupplements";
+import FeminineCare from "./homeLatestProducts/FeminineCare";
+import PersonalCare from "./homeLatestProducts/PersonalCare";
+
+const LatestProducts = () => {
+  const [selectedCategory, setSelectedCategory] = useState("energyDrinks");
+
+  const handleCategoryClick = (category) => {
+    setSelectedCategory(category);
+  };
+
+  const getCategoryClassName = (category) => {
+    return `cursor-pointer tracking-wider ${
+      selectedCategory === category
+        ? "bg-white text-[#3470a1]"
+        : "text-[#6cb250]"
+    } font-bold underline text-sm`;
+  };
+
+  return (
+    <div className="text-center m-2 bg-[#FBFCFC]">
+      <h1 className="text-4xl text-[#3470a1] font-semibold">
+        Our Latest Products
+      </h1>
+      <div className="border-t-2 border-[#3470a1] w-[8%] ml-[46%] mt-7"></div>
+      <div className="uppercase flex text-[#6cb250] font-bold underline pt-5 gap-5 text-sm justify-center">
+        <h1
+          className={`p-5 ${getCategoryClassName("energyDrinks")}`}
+          onClick={() => handleCategoryClick("energyDrinks")}
+        >
+          Energy drinks
+        </h1>
+        <h1
+          className={`p-5 ${getCategoryClassName("herbalPreparations")}`}
+          onClick={() => handleCategoryClick("herbalPreparations")}
+        >
+          Herbal preparations
+        </h1>
+        <h1
+          className={`p-5 ${getCategoryClassName("healthSupplements")}`}
+          onClick={() => handleCategoryClick("healthSupplements")}
+        >
+          Health supplements
+        </h1>
+        <h1
+          className={`p-5 ${getCategoryClassName("feminineCare")}`}
+          onClick={() => handleCategoryClick("feminineCare")}
+        >
+          Feminine care
+        </h1>
+        <h1
+          className={`p-5 ${getCategoryClassName("personalCare")}`}
+          onClick={() => handleCategoryClick("personalCare")}
+        >
+          Personal care
+        </h1>
+      </div>
+
+      {/* Render the corresponding product list based on the selected category */}
+      {selectedCategory === "energyDrinks" && <EnergyDrinks />}
+      {selectedCategory === "herbalPreparations" && <HerbalPreparations />}
+      {selectedCategory === "healthSupplements" && <HealthSupplements />}
+      {selectedCategory === "feminineCare" && <FeminineCare />}
+      {selectedCategory === "personalCare" && <PersonalCare />}
+    </div>
+  );
+};
+
+export default LatestProducts;
