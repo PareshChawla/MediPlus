@@ -22,7 +22,7 @@ const Header = () => {
   };
   return (
     <>
-      <div className="flex justify-between md:h-[9vh] h-[8vh] items-center m-2 lg:p-2">
+      <div className="flex justify-between md:h-[11vh] h-[8vh] items-center m-2 lg:m-0 lg:p-2 bg-white">
         <div>
           <Link to="/">
             <img className="h-12 mt-2 md:h-14 md:mt-4" src={logo} alt="logo" />
@@ -35,7 +35,7 @@ const Header = () => {
           <Link to="/about">
             <li className="hover:text-blue-400">ABOUT US</li>
           </Link>
-          <Link to="products">
+          <Link to="/products">
             <li className="hover:text-blue-400">PRODUCTS</li>
           </Link>
           <Link to="/stores">

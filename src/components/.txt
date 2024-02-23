@@ -1,0 +1,85 @@
+<div className="mb-5 m-2 px-4 pt-3 lg:m-3 lg:px-24">
+        <form onSubmit={handleSubmit} className="bg-white shadow-md p-4">
+          <img
+            className="w-full md:w-5/12 h-fit aspect-auto"
+            src={ContactUsImg}
+            alt="Contact us"
+          />
+          <h2 className="text-xl font-bold mb-4">Send Us a Message</h2>
+          <div className="mb-4">
+            <label htmlFor="name" className="block text-gray-700 font-bold mb-2">
+              Name *
+            </label>
+            <input
+              type="text"
+              id="name"
+              className="appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="email" className="block text-gray-700 font-bold mb-2">
+              Email Address *
+            </label>
+            <input
+              type="email"
+              id="email"
+              className="appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="mobile" className="block text-gray-700 font-bold mb-2">
+              Mobile Number *
+            </label>
+            <div className="flex items-center">
+              <input
+                type="tel"
+                id="mobile"
+                className="appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline mr-2"
+                value={mobile}
+                onChange={(e) => setMobile(e.target.value)}
+              />
+              <span className="text-gray-600">+91</span>
+            </div>
+          </div>
+          <div className="mb-4">
+            <label htmlFor="message" className="block text-gray-700 font-bold mb-2">
+              Message
+            </label>
+            <textarea
+              id="message"
+              className="appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+              rows="4"
+              value={message}
+              onChange={(e) => {
+                setMessage(e.target.value);
+                setCharCount(e.target.value.length);
+              }}
+            />
+            <p className="text-gray-600">{charCount}/180</p>
+          </div>
+          <button
+            type="submit"
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            disabled={charCount > 180}
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
+
+
+
+      const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [mobile, setMobile] = useState('');
+  const [charCount, setCharCount] = useState(0);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // handle form submission here
+  };

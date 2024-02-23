@@ -28,6 +28,7 @@ import { FaRegComments } from "react-icons/fa";
 import Surgical from "../assets/images/surgical-120x120.jpg";
 import Welcome from "./Welcome";
 import CardFullfillment from "./CardFullfillment";
+import LatestProducts from "./LatestProducts";
 
 const PrevArrow = () => {
   return <div className="hidden"></div>;
@@ -102,29 +103,30 @@ const Home = ({ img, medName }) => {
         <MedicineCarousel img={Surgical} medName={"Surgical"} />
       </Slider>
       <Welcome />
-      <div className="m-5 my-10 lg:px-20 p-5 grid lg:flex gap-10 lg:justify-around">
-      <CardFullfillment
-        logo={<FaShippingFast size={60} color="#6CB250" />}
-        title={"Free Shipping"}
-        content={
-          "We believe in making your shopping experience as seamless and cost-effective as possible. Enjoy Free Shipping on All Orders!"
-        }
-      />
-            <CardFullfillment
-        logo={<FaAmazonPay size={60} color="#6CB250"/>}
-        title={"Secure Payment"}
-        content={
-          "We at Mediplus recognize the value of safe online transactions. You can be confident that we have taken strong precautions to safeguard your credit card information."
-        }
-      />
-            <CardFullfillment
-        logo={<FaRegComments size={60} color="#6CB250"/>}
-        title={"24/7 Customer Support"}
-        content={
-          "Our staff is available to offer you timely and dependable service at any time. We are interested in your experience."
-        }
-      />
+      <div className="m-5 my-10 lg:px-20 p-5 grid lg:flex gap-10 lg:justify-around bg-[#FBFCFC]">
+        <CardFullfillment
+          logo={<FaShippingFast size={60} color="#6CB250" />}
+          title={"Free Shipping"}
+          content={
+            "We believe in making your shopping experience as seamless and cost-effective as possible. Enjoy Free Shipping on All Orders!"
+          }
+        />
+        <CardFullfillment
+          logo={<FaAmazonPay size={60} color="#6CB250" />}
+          title={"Secure Payment"}
+          content={
+            "We at Mediplus recognize the value of safe online transactions. You can be confident that we have taken strong precautions to safeguard your credit card information."
+          }
+        />
+        <CardFullfillment
+          logo={<FaRegComments size={60} color="#6CB250" />}
+          title={"24/7 Customer Support"}
+          content={
+            "Our staff is available to offer you timely and dependable service at any time. We are interested in your experience."
+          }
+        />
       </div>
+          <LatestProducts />
     </>
   );
 };
