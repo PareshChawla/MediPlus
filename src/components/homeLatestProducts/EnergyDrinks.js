@@ -9,7 +9,7 @@ import ed6 from "../../assets/images/energyDrinkImg/6ed.jpg";
 
 const EnergyDrinks = () => {
   return (
-    <div className='bg-white p-10 mx-16 flex flex-row gap-4'>
+    <div className='bg-white p-10 mx-16 flex flex-col lg:flex-row gap-4'>
     <ProductCard productImg={ed1} productTitle={"Armr Anti Hangover Shot Apple 60ml"} />
     <ProductCard productImg={ed2} productTitle={"Armr Anti Hangover Shot Apple 60ml"} />
     <ProductCard productImg={ed3} productTitle={"Armr Anti Hangover Shot Apple 60ml"} />

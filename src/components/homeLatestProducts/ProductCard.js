@@ -2,7 +2,7 @@ import React from 'react';
 
 const ProductCard = ({ productImg, productTitle }) => {
   return (
-    <div className='flex flex-col w-[18%] justify-center items-center overflow-hidden'>
+    <div className='flex flex-col lg:w-[18%] justify-center items-center overflow-hidden'>
       <div className="w-64 object-fit relative overflow-hidden transform transition-transform duration-500 hover:scale-110">
         <img className='object-contain w-full h-full' src={productImg} alt="latest-product" />
       </div>

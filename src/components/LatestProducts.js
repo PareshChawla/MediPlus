@@ -4,6 +4,7 @@ import HerbalPreparations from "./homeLatestProducts/HerbalPreparations";
 import HealthSupplements from "./homeLatestProducts/HealthSupplements";
 import FeminineCare from "./homeLatestProducts/FeminineCare";
 import PersonalCare from "./homeLatestProducts/PersonalCare";
+import { Link } from "react-router-dom";
 
 const LatestProducts = () => {
   const [selectedCategory, setSelectedCategory] = useState("energyDrinks");
@@ -26,7 +27,7 @@ const LatestProducts = () => {
         Our Latest Products
       </h1>
       <div className="border-t-2 border-[#3470a1] w-[8%] ml-[46%] mt-7"></div>
-      <div className="uppercase flex text-[#6cb250] font-bold underline pt-5 gap-5 text-sm justify-center">
+      <div className="uppercase flex flex-col lg:flex-row text-[#6cb250] font-bold underline pt-5 gap-5 text-sm justify-center">
         <h1
           className={`p-5 ${getCategoryClassName("energyDrinks")}`}
           onClick={() => handleCategoryClick("energyDrinks")}
@@ -65,6 +66,11 @@ const LatestProducts = () => {
       {selectedCategory === "healthSupplements" && <HealthSupplements />}
       {selectedCategory === "feminineCare" && <FeminineCare />}
       {selectedCategory === "personalCare" && <PersonalCare />}
+      <Link to="/products">
+        <button className="px-9 py-3.5 m-3 font-bold rounded-lg bg-white hover:bg-[#6cb250] hover:border-[#6cb250] border-2 border-[#3470a1] text-[#3470a1] hover:text-white">
+          ALL PRODUCTS
+        </button>
+      </Link>
     </div>
   );
 };
