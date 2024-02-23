@@ -1,18 +1,12 @@
-import React, {useState} from 'react'
+import React from 'react'
 import ContactCard from './ContactCard'
 import { FaLocationDot } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md"
 import { FaPhoneAlt } from "react-icons/fa";
+import ContactUsImg from '../assets/images/Contact2.jpg'
 
 const Contact = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // handle form submission here
-  }
   return (
     <div>
       <section className="bg-fixed relative grid place-items-center h-96 uppercase text-5xl font-bold bg-[url(/src/assets/images/contact.png)]">
@@ -36,46 +30,30 @@ const Contact = () => {
           content={"+91  9319595621"}
         />
       </div>
-      <form onSubmit={handleSubmit} className="w-full max-w-md mx-auto">
-      <div className="md:flex md:items-center mb-6">
-        <div className="md:w-1/3">
-          <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="name">
-            Name
-          </label>
+      <div className="flex h-screen border-2  ">
+        <div className="w-5/12 bg-cover aspect-auto p-10 lg:px-20 p-5" >
+          <img
+            className="w-full  h-fit aspect-auto"
+            src={ContactUsImg}
+            alt="Contact us"
+          />
         </div>
-        <div className="md:w-2/3">
-          <input className="appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="name" type="text" value={name} onChange={(e) => setName(e.target.value)} />
-        </div>
-      </div>
-      <div className="md:flex md:items-center mb-6">
-        <div className="md:w-1/3">
-          <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="email">
-            Email
-          </label>
-        </div>
-        <div className="md:w-2/3">
-          <input className="appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-        </div>
-      </div>
-      <div className="md:flex md:items-center mb-6">
-        <div className="md:w-1/3">
-          <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="message">
-            Message
-          </label>
-        </div>
-        <div className="md:w-2/3">
-          <textarea className="no-resize appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 h-40 resize-none" id="message" value={message} onChange={(e) => setMessage(e.target.value)}></textarea>
+        <div className="w-1/2 p-8">
+          <h2 className="text-2xl font-bold mb-4 text-[#3470a1]">Send Us a Message</h2>
+          <form className="space-y-4">
+            <input className="w-full p-2 " type="text" placeholder="Name" />
+            <input className="w-full p-2 " type="email" placeholder="Email" />
+            <input className="w-full p-2 " type="tel" placeholder="Mobile Number" />
+            <textarea className="w-full p-2 " placeholder="Message"></textarea>
+            <button
+              type="submit"
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            >
+              Send Message
+            </button>
+          </form>
         </div>
       </div>
-      <div className="md:flex md:items-center">
-        <div className="md:w-1/3"></div>
-        <div className="md:w-2/3">
-          <button className="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline-purple focus:outline-none text-white font-bold py-2 px-4 rounded" type="submit">
-            Send
-          </button>
-        </div>
-      </div>
-    </form>
     </div>
   )
 }

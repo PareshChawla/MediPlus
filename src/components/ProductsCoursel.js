@@ -3,11 +3,13 @@ import React from 'react'
 const ProductsCoursel = ({img, medName, medDetails, price}) => {
   return (
     <div className="bg-white shadow-md p-4 mb-5 m-2 px-4 pt-8 lg:m-5 ">
-          <img className="w-40" src={img} alt="products"  />
-          <h2 className="text-xl font-bold mb-2">{medName}</h2>
+      <div className="w-45 object-fit relative overflow-hidden transform transition-transform duration-500 hover:scale-110">
+          <img className="object-contain w-full h-full" src={img} alt="products"  />
+      </div>
+          <h2 className="mt-2 text-[#3470a1] hover:text-[#6cb250] font-bold">{medName}</h2>
           <p className="text-gray-600 mb-2">{medDetails}</p>
           <p className="text-gray-800 font-bold">{price}</p>
-          <button className="bg-green-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+          <button className="bg-[#6cb250] hover:bg-[#3470a1] text-white py-1.5 px-5 mt-10">
             Shop Now
           </button>
         </div>
@@ -15,5 +17,3 @@ const ProductsCoursel = ({img, medName, medDetails, price}) => {
 }
 
 export default ProductsCoursel
-
-// mx-auto py-12
