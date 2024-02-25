@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import AboutUsImg from "../assets/images/about-us.png";
 
 import { FaShippingFast } from "react-icons/fa";
@@ -7,6 +7,9 @@ import { FaRegComments } from "react-icons/fa";
 import CardFullfillment from "./CardFullfillment";
 
 const About = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <section className="bg-fixed bg-center bg-cover relative grid place-items-center  min-h-[460px] uppercase text-5xl font-bold bg-[url(/src/assets/images/Pharmacist_Behind.jpg)]">

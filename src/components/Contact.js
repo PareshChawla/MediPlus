@@ -1,7 +1,7 @@
 import React from 'react'
 import ContactCard from './ContactCard'
 import { FaLocationDot } from "react-icons/fa6";
-import { MdEmail } from "react-icons/md"
+import { HiOutlineMailOpen } from "react-icons/hi";
 import { FaPhoneAlt } from "react-icons/fa";
 import ContactUsImg from '../assets/images/Contact2.jpg'
 
@@ -13,7 +13,7 @@ const Contact = () => {
         <div className="absolute top-0 left-0 w-full h-full opacity-50 bg-gradient-to-b from-[#0084D6] to-black"></div>
         <h2 className=" text-white z-[2]">Contact Us</h2>
       </section>
-      <div className="m-5 my-10 lg:px-20 p-5 grid lg:flex gap-10 lg:justify-around ">
+      <div className="m-5 my-10 lg:px-20 p-5 grid lg:flex gap-10 lg:justify-around">
         <ContactCard
           title={"Physical Address"}
           logo={<FaLocationDot size={60} color='#6CB250' />}
@@ -21,7 +21,7 @@ const Contact = () => {
         />
         <ContactCard
           title={"Email address"}
-          logo={<MdEmail size={60} color='#6CB250' />}
+          logo={<HiOutlineMailOpen size={60} color='#6CB250' />}
           content={"enquiry@medlife.com"}
         />
         <ContactCard
@@ -31,7 +31,7 @@ const Contact = () => {
         />
       </div>
       <div className="flex h-screen border-2  ">
-        <div className="w-5/12 bg-cover aspect-auto p-10 lg:px-20 p-5" >
+        <div className="w-5/12 bg-cover aspect-auto p-10 lg:px-20" >
           <img
             className="w-full  h-fit aspect-auto"
             src={ContactUsImg}

@@ -22,7 +22,7 @@ const LatestProducts = () => {
   };
 
   return (
-    <div className="text-center m-2 bg-[#FBFCFC]">
+    <div className="text-center m-2 mb-7 bg-[#FBFCFC]">
       <h1 className="text-4xl text-[#3470a1] font-semibold">
         Our Latest Products
       </h1>
@@ -34,38 +34,45 @@ const LatestProducts = () => {
         >
           Energy drinks
         </h1>
+        <div className="block md:hidden">{selectedCategory === "energyDrinks" && <EnergyDrinks />}</div>
         <h1
           className={`p-5 ${getCategoryClassName("herbalPreparations")}`}
           onClick={() => handleCategoryClick("herbalPreparations")}
         >
           Herbal preparations
         </h1>
+        <div className="block md:hidden">{selectedCategory === "herbalPreparations" && <HerbalPreparations />}</div>
         <h1
           className={`p-5 ${getCategoryClassName("healthSupplements")}`}
           onClick={() => handleCategoryClick("healthSupplements")}
         >
           Health supplements
         </h1>
+        <div className="block md:hidden">{selectedCategory === "healthSupplements" && <HealthSupplements />}</div>
         <h1
           className={`p-5 ${getCategoryClassName("feminineCare")}`}
           onClick={() => handleCategoryClick("feminineCare")}
         >
           Feminine care
         </h1>
+        <div className="block md:hidden">{selectedCategory === "feminineCare" && <FeminineCare />}</div>
         <h1
           className={`p-5 ${getCategoryClassName("personalCare")}`}
           onClick={() => handleCategoryClick("personalCare")}
         >
           Personal care
         </h1>
+        <div className="block md:hidden">{selectedCategory === "personalCare" && <PersonalCare />}</div>
       </div>
 
-      {/* Render the corresponding product list based on the selected category */}
+      <div className="hidden md:block">
       {selectedCategory === "energyDrinks" && <EnergyDrinks />}
       {selectedCategory === "herbalPreparations" && <HerbalPreparations />}
       {selectedCategory === "healthSupplements" && <HealthSupplements />}
       {selectedCategory === "feminineCare" && <FeminineCare />}
       {selectedCategory === "personalCare" && <PersonalCare />}
+      </div>
+
       <Link to="/products">
         <button className="px-9 py-3.5 m-3 font-bold rounded-lg bg-white hover:bg-[#6cb250] hover:border-[#6cb250] border-2 border-[#3470a1] text-[#3470a1] hover:text-white">
           ALL PRODUCTS

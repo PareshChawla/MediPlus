@@ -29,6 +29,7 @@ import Surgical from "../assets/images/surgical-120x120.jpg";
 import Welcome from "./Welcome";
 import CardFullfillment from "./CardFullfillment";
 import LatestProducts from "./LatestProducts";
+import AboutUs from "./homeAboutUs/AboutUs";
 
 const PrevArrow = () => {
   return <div className="hidden"></div>;
@@ -127,6 +128,7 @@ const Home = ({ img, medName }) => {
         />
       </div>
           <LatestProducts />
+          <AboutUs />
     </>
   );
 };
