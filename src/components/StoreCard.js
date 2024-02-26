@@ -1,15 +1,11 @@
 import React from "react";
 
-const StoreCard = ({ src, title, logo }) => {
+const StoreCard = ({ src, title, logo, address }) => {
+  
+
   return (
     <div
       className=" flex flex-col items-center"
-      //   style={{
-      //     backgroundColor: "white",
-      //     borderRadius: "4px",
-      //     boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
-      //     padding: "4px",
-      //   }}
     >
       <img src={logo} alt="logo" />
       <iframe
@@ -22,6 +18,9 @@ const StoreCard = ({ src, title, logo }) => {
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
       ></iframe>
+
+      <div className=" text-[#3470A1] font-bold pt-2" >{address}</div>
+
     </div>
   );
 };
