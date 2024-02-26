@@ -1,4 +1,5 @@
-import { faRocketchat } from "@fortawesome/free-brands-svg-icons";
+import { faDiscourse, faRocketchat } from "@fortawesome/free-brands-svg-icons";
+import { faPhoneVolume, faTruckFast } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 const StoreCard = ({ src, title, logo, address, time, phone, telephone }) => {
@@ -24,17 +25,25 @@ const StoreCard = ({ src, title, logo, address, time, phone, telephone }) => {
             <FontAwesomeIcon className="text-[#6CB250]" icon={faRocketchat} /> {time}
           </div>
           <div className="font-semibold hover:text-[#3470A1]">
-          <FontAwesomeIcon className="text-[#6CB250]" icon={faRocketchat} /> Free Home Delivery
+          <FontAwesomeIcon className="text-[#6CB250]" icon={faTruckFast} /> Free Home Delivery
           </div>
           <div className="font-semibold hover:text-[#3470A1]">
-          <FontAwesomeIcon className="text-[#6CB250]" icon={faRocketchat} /> Exclusive Discount
+          <FontAwesomeIcon className="text-[#6CB250]" icon={faDiscourse} /> Exclusive Discount
           </div>
         </div>
 
         <div className=" text-center">
+          <div>
           <div className="text-[#3470A1] font-semibold  ">CALL NOW</div>
-          <div className="text-[#6CB250] font-semibold ">{telephone}</div>
-          <div className="text-[#6CB250] font-semibold">{phone}</div>
+
+          <div className="text-[#6CB250] font-semibold ">
+            <FontAwesomeIcon className="text-[#6CB250]" icon={faRocketchat} /> {telephone}
+          </div>
+          <div className="text-[#6CB250] font-semibold">
+            <FontAwesomeIcon className="text-[#6CB250]" icon={faPhoneVolume} /> {phone}
+          </div>
+        </div>
+          
         </div>
       </div>
     </div>
