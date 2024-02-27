@@ -18,34 +18,34 @@ const Footer = () => {
       <div className="text-sm lg:text-base pt-4 lg:pt-0">
         <h1 className="underline font-semibold pb-4">QUICK LINKS</h1>
         <ul className="list-image-rightarrow">
-            <li>Home</li>
-            <li>About Us</li>
-            <li>Our Store</li>
-            <li>Blogs</li>
-            <li>Return Policy</li>
-            <li>Privacy Policy</li>
-            <li>Terms & Conditions</li>
-            <li>FAQ</li>
+            <li className="hover:text-[#61CE70]">Home</li>
+            <li className="hover:text-[#61CE70]">About Us</li>
+            <li className="hover:text-[#61CE70]">Our Store</li>
+            <li className="hover:text-[#61CE70]">Blogs</li>
+            <li className="hover:text-[#61CE70]">Return Policy</li>
+            <li className="hover:text-[#61CE70]">Privacy Policy</li>
+            <li className="hover:text-[#61CE70]">Terms & Conditions</li>
+            <li className="hover:text-[#61CE70]">FAQ</li>
         </ul>
       </div>
       <div className="text-sm lg:text-base pt-4 lg:pt-0">
         <h1 className="underline font-semibold pb-4">CATEGORY</h1>
         <ul className="list-image-rightarrow">
-            <li>Prescription</li>
-            <li>Feminine Care</li>
-            <li>Health Supplements</li>
-            <li>Healthcare Devices</li>
-            <li>Derma cosmetics</li>
-            <li>Herbal Preparations</li>
-            <li>Personal Care</li>
-            <li>Energy Drinks</li>
+            <li className="hover:text-[#61CE70]">Prescription</li>
+            <li className="hover:text-[#61CE70]">Feminine Care</li>
+            <li className="hover:text-[#61CE70]">Health Supplements</li>
+            <li className="hover:text-[#61CE70]">Healthcare Devices</li>
+            <li className="hover:text-[#61CE70]">Derma cosmetics</li>
+            <li className="hover:text-[#61CE70]">Herbal Preparations</li>
+            <li className="hover:text-[#61CE70]">Personal Care</li>
+            <li className="hover:text-[#61CE70]">Energy Drinks</li>
         </ul>
       </div>
       <div className="text-sm lg:text-base pt-4 lg:pt-0">
         <h1 className="underline font-semibold pb-4">CONTACT US</h1>
         <ul>
-            <li className="flex items-center gap-2"><FaPhoneAlt /> +918595986120</li>
-            <li className="flex items-center gap-2"><MdEmail />info@entrepreneurshipnetwork.net</li>
+            <li className="flex items-center gap-2 hover:text-[#61CE70]"><FaPhoneAlt /> +918595986120</li>
+            <li className="flex items-center gap-2 hover:text-[#61CE70]"><MdEmail />info@entrepreneurshipnetwork.net</li>
         </ul>
       </div>
     </div>

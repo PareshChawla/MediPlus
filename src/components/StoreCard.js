@@ -1,6 +1,7 @@
 import { faDiscourse, faRocketchat } from "@fortawesome/free-brands-svg-icons";
 import { faPhoneVolume, faTruckFast } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Telephoneimg from '../assets/images/telephone.png';
 import React from "react";
 const StoreCard = ({ src, title, logo, address, time, phone, telephone }) => {
   return (
@@ -34,12 +35,14 @@ const StoreCard = ({ src, title, logo, address, time, phone, telephone }) => {
 
         <div className=" text-center">
           <div>
-          <div className="text-[#3470A1] font-semibold  ">CALL NOW</div>
+          <div className="text-[#3470A1] font-bold  ">CALL NOW</div>
 
-          <div className="text-[#6CB250] font-semibold ">
-            <FontAwesomeIcon className="text-[#6CB250]" icon={faRocketchat} /> {telephone}
+          <div className="flex items-center text-[#6CB250] font-semibold cursor-pointer">
+            <img className="h-4 w-5 object-cover mr-2" src={Telephoneimg} alt="Telephoneimg" />
+            <span>{telephone}</span>
           </div>
-          <div className="text-[#6CB250] font-semibold">
+          
+          <div className="text-[#6CB250] font-semibold cursor-pointer">
             <FontAwesomeIcon className="text-[#6CB250]" icon={faPhoneVolume} /> {phone}
           </div>
         </div>
