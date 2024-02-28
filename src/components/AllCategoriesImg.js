@@ -10,7 +10,7 @@ const AllCategoriesImg = ({ CategoryImg, CategoryText, CategoryBtn }) => {
         onMouseLeave={() => setIsHovered(false)}
       >
         <img
-          className="md:w-[270px] w-[330px] h-48 transition-transform ease-in-out duration-500 transform hover:scale-125 hover:brightness-50 object-cover"
+          className="md:w-[270px] w-[245px] h-48 transition-transform ease-in-out duration-500 transform hover:scale-125 hover:brightness-50 object-cover"
           src={CategoryImg}
           alt="category-img"
         />
