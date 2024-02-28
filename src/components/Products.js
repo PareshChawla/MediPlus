@@ -12,6 +12,8 @@ import Med9 from "../assets/images/G9.jpg";
 import Med10 from "../assets/images/G10.jpg";
 import Med11 from "../assets/images/G11.jpg";
 import Med12 from "../assets/images/G12.jpeg";
+import Pagination from "./Pagination";
+
 
 const Products = () => {
   useEffect(() => {
@@ -23,8 +25,8 @@ const Products = () => {
         <div className="absolute top-0 left-0 w-full h-full opacity-50 bg-gradient-to-b from-[#0084D6] to-black"></div>
         <h2 className=" text-white z-[2]">Our Products</h2>
       </section>
-      <div className="container mx-auto p-3">
-        <h1 className="text-4xl font-bold mb-4 text-center">Our Products</h1>
+      <div className="container mx-auto p-40 md:flex-row">
+        <h1 className="text-4xl font-bold mb-4 text-center text-[#3470a1]">Our Products</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           <ProdutsCarousel
             img={Med1}
@@ -99,6 +101,7 @@ const Products = () => {
             price={"12$"}
           />
         </div>
+        <Pagination/>
       </div>
     </>
   );
