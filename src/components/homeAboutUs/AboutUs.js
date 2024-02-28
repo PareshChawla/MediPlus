@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 
 const AboutUs = () => {
   return (
-    <div className="bg-[#6CB250] text-white p-16 px-20 bg-opacity-90">
+    <div className="bg-[#6CB250] text-white p-5 pb-16 md:p-16 md:px-20 bg-opacity-90">
       <h1 className="text-2xl font-bold text-center py-4">ABOUT US</h1>
       <p className="text-center pb-2">
         We think it's important to give back to the communities we work in.
