@@ -1,6 +1,7 @@
-import { faDiscourse, faRocketchat } from "@fortawesome/free-brands-svg-icons";
-import { faPhoneVolume, faTruckFast } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FaDiscourse } from "react-icons/fa";
+import { FaRocketchat } from "react-icons/fa";
+import { FaPhoneVolume } from "react-icons/fa6";
+import { FaTruckFast } from "react-icons/fa6";
 import Telephoneimg from '../assets/images/telephone.png';
 import React from "react";
 const StoreCard = ({ src, title, logo, address, time, phone, telephone }) => {
@@ -22,14 +23,14 @@ const StoreCard = ({ src, title, logo, address, time, phone, telephone }) => {
 
       <div className=" flex w-full justify-between">
         <div>
-          <div className="font-semibold hover:text-[#3470A1] ">
-            <FontAwesomeIcon className="text-[#6CB250]" icon={faRocketchat} /> {time}
+          <div className="font-semibold hover:text-[#3470A1] flex items-center gap-1">
+            <FaRocketchat color="#6CB250" size={18}/> {time}
           </div>
-          <div className="font-semibold hover:text-[#3470A1]">
-          <FontAwesomeIcon className="text-[#6CB250]" icon={faTruckFast} /> Free Home Delivery
+          <div className="font-semibold hover:text-[#3470A1] flex items-center gap-1">
+          <FaTruckFast color="#6CB250" size={18}/>Free Home Delivery
           </div>
-          <div className="font-semibold hover:text-[#3470A1]">
-          <FontAwesomeIcon className="text-[#6CB250]" icon={faDiscourse} /> Exclusive Discount
+          <div className="font-semibold hover:text-[#3470A1] flex items-center gap-1">
+          <FaDiscourse color="#6CB250" size={18}/> Exclusive Discount
           </div>
         </div>
 
@@ -42,8 +43,8 @@ const StoreCard = ({ src, title, logo, address, time, phone, telephone }) => {
             <span>{telephone}</span>
           </div>
           
-          <div className="text-[#6CB250] font-semibold cursor-pointer">
-            <FontAwesomeIcon className="text-[#6CB250]" icon={faPhoneVolume} /> {phone}
+          <div className="text-[#6CB250] font-semibold cursor-pointer flex items-center gap-1">
+            <FaPhoneVolume color="#6CB250" size={18}/>{phone}
           </div>
         </div>
           
