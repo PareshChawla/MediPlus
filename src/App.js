@@ -11,7 +11,6 @@ import ReturnPolicy from "./components/ReturnPolicy";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import Terms from "./components/Terms&Conditions";
 import Faq from "./components/Faq";
-import Prescription from "./components/category/Prescription";
 import DermaCosmetics from "./components/category/DermaCosmetics";
 import FeminineCare from "./components/category/FeminineCare";
 import HealthSupplements from "./components/category/HealthSupplements";
@@ -19,6 +18,7 @@ import HealthcareDevices from "./components/category/HealthcareDevices";
 import HerbalPreparations from "./components/category/HerbalPreparations";
 import PersonalCare from "./components/category/PersonalCare";
 import EnergyDrinks from "./components/category/EnergyDrinks";
+import Prescription from "./components/category/Prescription";
 
 export const appRouter = createBrowserRouter([
   {
