@@ -41,25 +41,26 @@ const Header = () => {
           <Link to="/stores">
             <li className="hover:text-blue-400">OUR STORES</li>
           </Link>
-          <Link to="blogs">
+          <Link to="/blogs">
             <li className="hover:text-blue-400">BLOGS</li>
           </Link>
           <Link to="/contact">
             <li className="hover:text-blue-400">CONTACT US</li>
           </Link>
         </ul>
-        <h1 className="hidden md:block font-semibold text-red-500 mr-10 hover:text-green-500 cursor-pointer">
-          Upload Prescription
-        </h1>
+        <Link to="/upload">
+          <li className="hidden md:block font-semibold text-red-500 mr-10 hover:text-green-500 cursor-pointer">
+            Upload Prescription</li>
+        </Link>
         <div className="hidden md:flex gap-5 mr-5">
           <div className="mr-3">
             <RiSearchLine size={20} />
           </div>
-          <BiLogoFacebookCircle size={18} className="hover:text-green-400 cursor-pointer"/>
-          <FaSquareXTwitter size={18} className="hover:text-green-400 cursor-pointer"/>
-          <BiLogoInstagramAlt size={18} className="hover:text-green-400 cursor-pointer"/>
-          <BiLogoLinkedinSquare size={18} className="hover:text-green-400 cursor-pointer"/>
-          <BiLogoYoutube size={18} className="hover:text-green-400 cursor-pointer"/>
+          <BiLogoFacebookCircle size={18} className="hover:text-green-400 cursor-pointer" />
+          <FaSquareXTwitter size={18} className="hover:text-green-400 cursor-pointer" />
+          <BiLogoInstagramAlt size={18} className="hover:text-green-400 cursor-pointer" />
+          <BiLogoLinkedinSquare size={18} className="hover:text-green-400 cursor-pointer" />
+          <BiLogoYoutube size={18} className="hover:text-green-400 cursor-pointer" />
         </div>
         <div
           className="lg:hidden flex bg-gray-200 rounded-sm items-center gap-2 m-2 p-2 cursor-pointer"

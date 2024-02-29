@@ -3,7 +3,8 @@ import ContactCard from './ContactCard'
 import { FaLocationDot } from "react-icons/fa6";
 import { HiOutlineMailOpen } from "react-icons/hi";
 import { FaPhoneAlt } from "react-icons/fa";
-import ContactUsImg from '../assets/images/Contact2.jpg'
+import ContactUsImg from '../assets/images/Contact2.jpg';
+import ContactForm from './ContactForm';
 
 const Contact = () => {
 
@@ -40,7 +41,7 @@ const Contact = () => {
         </div>
         <div className="w-1/2 p-8">
           <h2 className="text-2xl font-bold mb-4 text-[#3470a1]">Send Us a Message</h2>
-          <form className="space-y-4">
+          <ContactForm id="contactForm" className="space-y-4">
             <input className="w-full p-2 " type="text" placeholder="Name" />
             <input className="w-full p-2 " type="email" placeholder="Email" />
             <input className="w-full p-2 " type="tel" placeholder="Mobile Number" />
@@ -51,7 +52,7 @@ const Contact = () => {
             >
               Send Message
             </button>
-          </form>
+          </ContactForm >
         </div>
       </div>
     </div>

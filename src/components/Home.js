@@ -32,6 +32,7 @@ import LatestProducts from "./LatestProducts";
 import AboutUs from "./homeAboutUs/AboutUs";
 import AllCategories from "./AllCategories";
 
+
 const PrevArrow = () => {
   return <div className="hidden"></div>;
 };
@@ -128,9 +129,9 @@ const Home = ({ img, medName }) => {
           }
         />
       </div>
-          <LatestProducts />
-          <AboutUs />
-          <AllCategories />
+      <LatestProducts />
+      <AboutUs />
+      <AllCategories />
     </>
   );
 };

@@ -7,6 +7,12 @@ import Store from "./components/Store";
 import Blogs from "./components/Blogs";
 import Contact from "./components/Contact";
 import Products from "./components/Products";
+<<<<<<< HEAD
+import EmailJS from 'emailjs-com';
+import UploadPrescription from "./components/UploadPrescription";
+
+EmailJS.init("Zeg7ovdqSlwuboR-4");
+=======
 import ReturnPolicy from "./components/ReturnPolicy";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import Terms from "./components/Terms&Conditions";
@@ -19,6 +25,7 @@ import HerbalPreparations from "./components/category/HerbalPreparations";
 import PersonalCare from "./components/category/PersonalCare";
 import EnergyDrinks from "./components/category/EnergyDrinks";
 import Prescription from "./components/category/Prescription";
+>>>>>>> d4d28b6704db23c35de86bfa79b4f9143948fd46
 
 export const appRouter = createBrowserRouter([
   {
@@ -50,6 +57,10 @@ export const appRouter = createBrowserRouter([
         element: <Contact />,
       },
       {
+<<<<<<< HEAD
+        path: "/upload",
+        element: <UploadPrescription />,
+=======
         path: "/return-policy",
         element: <ReturnPolicy />,
       },
@@ -96,6 +107,7 @@ export const appRouter = createBrowserRouter([
       {
         path: "/category/energy-drinks",
         element: <EnergyDrinks />,
+>>>>>>> d4d28b6704db23c35de86bfa79b4f9143948fd46
       },
     ],
   },
