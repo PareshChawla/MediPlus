@@ -23,12 +23,12 @@ const Contact = () => {
         <ContactCard
           title={"Email address"}
           logo={<HiOutlineMailOpen size={60} color='#6CB250' />}
-          content={"enquiry@medlife.com"}
+          content={"tech@entrepreneurshipnetwork.net"}
         />
         <ContactCard
           title={"Phone Number"}
           logo={<FaPhoneAlt size={60} color='#6CB250' />}
-          content={"+91  9319595621"}
+          content={"+91  7498232799"}
         />
       </div>
       <div className="flex h-screen border-2  ">

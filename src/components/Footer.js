@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../assets/images/medplusLogo.png";
+import { Link } from 'react-router-dom';
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
@@ -18,27 +19,27 @@ const Footer = () => {
       <div className="text-sm lg:text-base pt-4 lg:pt-0">
         <h1 className="underline font-semibold pb-4">QUICK LINKS</h1>
         <ul className="list-image-rightarrow">
-            <li className="hover:text-[#61CE70]">Home</li>
-            <li className="hover:text-[#61CE70]">About Us</li>
-            <li className="hover:text-[#61CE70]">Our Store</li>
-            <li className="hover:text-[#61CE70]">Blogs</li>
-            <li className="hover:text-[#61CE70]">Return Policy</li>
-            <li className="hover:text-[#61CE70]">Privacy Policy</li>
-            <li className="hover:text-[#61CE70]">Terms & Conditions</li>
-            <li className="hover:text-[#61CE70]">FAQ</li>
+            <li className="hover:text-[#61CE70]"><Link to="/">Home</Link></li>
+            <li className="hover:text-[#61CE70]"><Link to="/about">About Us</Link></li>
+            <li className="hover:text-[#61CE70]"><Link to="/stores">Our Store</Link></li>
+            <li className="hover:text-[#61CE70]"><Link to="/blogs">Blogs</Link></li>
+            <li className="hover:text-[#61CE70]"><Link to="/return-policy">Return Policy</Link></li>
+            <li className="hover:text-[#61CE70]"><Link to="/privacy-policy">Privacy Policy</Link></li>
+            <li className="hover:text-[#61CE70]"><Link to="/terms-conditions">Terms & Conditions</Link></li>
+            <li className="hover:text-[#61CE70]"><Link to="/faq">FAQ</Link></li>
         </ul>
       </div>
       <div className="text-sm lg:text-base pt-4 lg:pt-0">
         <h1 className="underline font-semibold pb-4">CATEGORY</h1>
         <ul className="list-image-rightarrow">
-            <li className="hover:text-[#61CE70]">Prescription</li>
-            <li className="hover:text-[#61CE70]">Feminine Care</li>
-            <li className="hover:text-[#61CE70]">Health Supplements</li>
-            <li className="hover:text-[#61CE70]">Healthcare Devices</li>
-            <li className="hover:text-[#61CE70]">Derma cosmetics</li>
-            <li className="hover:text-[#61CE70]">Herbal Preparations</li>
-            <li className="hover:text-[#61CE70]">Personal Care</li>
-            <li className="hover:text-[#61CE70]">Energy Drinks</li>
+            <li className="hover:text-[#61CE70]"><Link to="/category/prescription">Prescription</Link></li>
+            <li className="hover:text-[#61CE70]"><Link to="/category/feminine-care">Feminine Care</Link></li>
+            <li className="hover:text-[#61CE70]"><Link to="/category/health-supplements">Health Supplements</Link></li>
+            <li className="hover:text-[#61CE70]"><Link to="/category/healthcare-devices">Healthcare Devices</Link></li>
+            <li className="hover:text-[#61CE70]"><Link to="/category/derma-cosmetics">Derma cosmetics</Link></li>
+            <li className="hover:text-[#61CE70]"><Link to="/category/herbal-preparations">Herbal Preparations</Link></li>
+            <li className="hover:text-[#61CE70]"><Link to="/category/personal-care">Personal Care</Link></li>
+            <li className="hover:text-[#61CE70]"><Link to="/category/energy-drinks">Energy Drinks</Link></li>
         </ul>
       </div>
       <div className="text-sm lg:text-base pt-4 lg:pt-0">
