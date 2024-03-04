@@ -1,21 +1,38 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+// import { Link } from "react-router-dom";
 
-const Pagination = ({ currentPage, totalPages, onNext }) => {
+const Pagination = ({ pages, setCurrentPage, currentPage }) => {
+const handlePageChange = (pageNumber) => {
+  setCurrentPage(pageNumber);
+  console.log(currentPage)
+};
   return (
-    <div className="flex items-center justify-center mt-4">
-      <div className="flex space-x-2">
-        <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded" onClick={() => onNext(currentPage - 1)} disabled={currentPage === 1}>
+    <div className="flex justify-center items-center ">
+      <div className="flex justify-between w-64">
+        <button
+          className="bg-[#6cb250] hover:bg-blue-700 text-white font-bold py-1.5 px-5"
+          onClick={() => handlePageChange(currentPage - 1)} 
+          disabled={currentPage === 1}
+        >
           Prev
         </button>
-        <span className="bg-white text-gray-800 font-bold py-2 px-4 rounded">
-          {currentPage}
-        </span>
-        <Link to="/">
-        <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded" onClick={() => onNext(currentPage + 1)} disabled={currentPage === totalPages}>
+        {pages.map((page, index) => {
+          return (
+            <button
+              key={index}
+              onClick={() => setCurrentPage(page)}
+              className={`text-lg font-semibold ${page === currentPage ? "active " : ""}`}>
+              {page}
+            </button>
+          );
+        })}
+        {/* <button
+          className="bg-[#6cb250] hover:bg-blue-700 text-white font-bold py-1.5 px-5 rounded"
+          onClick={() => handlePageChange(currentPage + 1)} 
+          disabled={pages.length}
+        >
           Next
-        </button>
-        </Link>
+        </button> */}
       </div>
     </div>
   );

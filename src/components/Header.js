@@ -48,9 +48,11 @@ const Header = () => {
             <li className="hover:text-blue-400">CONTACT US</li>
           </Link>
         </ul>
-        <h1 className="hidden md:block font-semibold text-red-500 mr-10 hover:text-green-500 cursor-pointer">
-          Upload Prescription
-        </h1>
+        <Link to="/upload-prescription">
+          <h1 className="hidden md:block font-semibold text-red-500 mr-10 hover:text-green-500 cursor-pointer">
+            Upload Prescription
+          </h1>
+        </Link>
         <div className="hidden md:flex gap-5 mr-5">
           <div className="mr-3">
             <RiSearchLine size={20} />
