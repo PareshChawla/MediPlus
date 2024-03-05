@@ -109,6 +109,3 @@ const DermaCosmetics = () => {
 };
 
 export default DermaCosmetics;
-
-
-

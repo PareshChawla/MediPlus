@@ -97,6 +97,7 @@ export const appRouter = createBrowserRouter([
         path: "/category/energy-drinks",
         element: <EnergyDrinks />,
       },
+      
     ],
   },
 ]);
