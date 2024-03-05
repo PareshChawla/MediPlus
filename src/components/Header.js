@@ -48,7 +48,7 @@ const Header = () => {
             <li className="hover:text-blue-400">CONTACT US</li>
           </Link>
         </ul>
-        <Link to="/upload-prescription">
+        <Link to="/upload">
           <h1 className="hidden md:block font-semibold text-red-500 mr-10 hover:text-green-500 cursor-pointer">
             Upload Prescription
           </h1>
