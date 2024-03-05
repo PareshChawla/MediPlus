@@ -9,7 +9,7 @@ const ProductsCoursel = ({ img, medName, medDetails, price }) => {
       <h2 className="mt-2 text-[#3470a1] hover:text-[#6cb250] font-bold text-center">{medName}</h2>
       <p className="text-gray-600 mb-2 text-center">{medDetails}</p>
       <p className="text-gray-800 font-bold text-center">{price}</p>
-      <button className="bg-[#6cb250] hover:bg-[#3470a1] text-white py-1.5 px-5 mt-10">
+      <button className="bg-[#6cb250] hover:bg-[#3470a1] text-white py-1.5 px-5 mt-auto">
         Shop Now
       </button>
     </div>
