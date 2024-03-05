@@ -17,7 +17,7 @@ const Contact = () => {
         <ContactCard
           title={"Physical Address"}
           logo={<FaLocationDot size={60} color='#6CB250' />}
-          content={"5th Floor, Silver Spring Building, Sector – 126, Noida,Uttar Pradesh-201309"}
+          content={"3rd Floor, The Corenthum, India Accelerator, Sector 62, Noida, Uttar Pradesh 201301"}
         />
         <ContactCard
           title={"Email address"}

@@ -38,60 +38,46 @@ const About = () => {
             </h1>
             <div className="text-[#434f58] flex flex-col gap-5 mt-5">
               <p className="  lg:leading-7">
-                Welcome to Pharmville Pharmacy, where health meets care, and
-                convenience meets expertise. We are dedicated towards providing
-                high-quality pharmaceutical services to our community, ensuring
-                every individual has access to the best possible healthcare
-                solutions.
+              Welcome to Mediplus Pharmacy, where convenience meets knowledge and health meets care. 
+              We are committed to offering our community top-notch pharmaceutical services and 
+              making sure that everyone has access to the greatest medical treatments available.
               </p>
               <p className="lg:leading-7">
-                At Pharmville, our mission is simple: to improve the health &
-                wellbeing of community by providing high quality, most
-                convenient, affordable and easy-to-access pharmacy services. We
-                believe in going beyond just dispensing medications; we strive
-                to be a trusted partner in your journey towards better health.
+              Our goal at mediplus is to enhance community health and well-being by offering 
+              pharmaceutical services that are of the highest calibre, most accessible, economical, and convenient. 
+              Beyond simply giving out prescriptions, we want to be a reliable companion on your path to improved health.
               </p>
               <p className=" lg:leading-7">
-                <b>Quality Assurance:</b> We adhere to the highest retail pharma
-                standards, ensuring that every product we dispense is of the
-                utmost quality, and that our services meet or exceed regulatory
-                requirements.
+                <b>Quality Assurance:</b> We guarantee that every product we dispense is of the highest calibre and 
+                that our services either meet or surpass regulatory requirements by upholding the strictest retail pharmacy standards.
               </p>
               <p className="  lg:leading-7">
-                <b>Personalized Care:</b> We understand that healthcare is not
-                one-size-fits-all. Our experienced team is committed to
-                providing personalized advice and support tailored to your
-                unique need.
+                <b>Personalized Care:</b> We understand that healthcare is not one-size-fits-all. 
+                Our experienced team is committed to providing personalized advice and support tailored to your unique need.
               </p>
             </div>
           </div>
         </div>
         <div className="text-[#434f58] flex flex-col gap-5 mt-5">
           <p className="  lg:leading-7">
-            <b>Accessibility:</b> We believe that healthcare should be
-            accessible to all. With convenient locations, extended hours, and an
-            array of online services, we aim to make healthcare more attainable
-            for everyone.
+            <b>Accessibility:</b> We think everyone should have access to healthcare. 
+            Our goal is to provide accessibility to healthcare for everyone by offering 
+            a range of online services, convenient locations, and extended hours.
           </p>
           <p className="  lg:leading-7">
-            <b>Availability:</b> With a wide range of prescription, over the
-            counter medicine, fast moving consumer goods & diagnostic
-            equipment’s we have more then 50k plus sku’s available in inventory
-            to make community buying experience hassle free & affordable.
+            <b>Availability:</b> We offer more than 50,000 SKUs of prescription, 
+            over-the-counter, fast-moving consumer items, and diagnostic equipment in our inventory, 
+            making community shopping convenient and reasonably priced.
           </p>
           <p className=" lg:leading-7">
-            Our team of dedicated pharmacists and healthcare professionals are
-            the heart of Pharmville Pharmacy. With a wealth of experience and a
-            genuine passion for helping others, they are here to guide you on
-            your path towards better health and wellness. From medication
-            consultations to lifestyle advice, you can trust that you are in
-            capable and caring hands.
+          The core of mediplus Pharmacy is our group of committed chemists and medical specialists. 
+          They are here to help you on your journey towards improved health and wellness because they 
+          have a lot of knowledge and a sincere enthusiasm for helping people. You may rely on 
+          competent and compassionate hands for anything from medicine consultations to lifestyle guidance.
           </p>
           <p className="  lg:leading-7">
-            We believe in giving back to the communities we serve. Pharmville
-            Pharmacy actively participates in local initiatives and supports
-            various charitable organizations dedicated to improving health
-            outcomes and overall well-being.
+          We think it's important to give back to the communities we work in. mediplus Pharmacy is involved 
+          in the community and supports a number of nonprofits that work to enhance people's health and well-being.
           </p>
         </div>
       </div>
@@ -100,7 +86,7 @@ const About = () => {
           logo={<FaShippingFast size={60} color="#6CB250" />}
           title={"Free Shipping"}
           content={
-            "We believe in making your shopping experience as seamless and cost-effective as possible. Enjoy Free Shipping on All Orders!"
+            "Our goal is to provide you with the most convenient and economical purchasing experience possible. Get Free Delivery on All Orders!"
           }
         />
         <CardFullfillment
