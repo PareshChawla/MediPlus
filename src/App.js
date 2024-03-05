@@ -19,6 +19,10 @@ import HerbalPreparations from "./components/category/HerbalPreparations";
 import PersonalCare from "./components/category/PersonalCare";
 import EnergyDrinks from "./components/category/EnergyDrinks";
 import Prescription from "./components/category/Prescription";
+import UploadPrescription from "./components/UploadPrescription";
+import EmailJS from 'emailjs-com';
+
+EmailJS.init("Zeg7ovdqSlwuboR-4");
 
 export const appRouter = createBrowserRouter([
   {
@@ -96,6 +100,10 @@ export const appRouter = createBrowserRouter([
       {
         path: "/category/energy-drinks",
         element: <EnergyDrinks />,
+      },
+      {
+        path: "/upload",
+        element: <UploadPrescription />,
       },
       
     ],
