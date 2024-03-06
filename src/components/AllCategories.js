@@ -4,6 +4,8 @@ import AllCategoriesImg from "./AllCategoriesImg";
 import HB from "../assets/images/allCategoriesImg/Herbal-Preparations.jpg";
 import PC from "../assets/images/allCategoriesImg/Personal-Care.jpg";
 import ED from "../assets/images/allCategoriesImg/eneryD.jpg";
+import banner from "../assets/images/medi.jpg";
+import { Link } from "react-router-dom";
 
 const AllCategories = () => {
   return (
@@ -28,9 +30,23 @@ const AllCategories = () => {
       </div>
       <div className="w-[70%] ml-[15%] md:flex md:flex-row flex-col ">
         <AllCategoriesImg CategoryImg={BabyCare} CategoryText={"Baby Care"} CategoryBtn={"Baby Care"} />
-        <AllCategoriesImg CategoryImg={HB} CategoryText={"Herbal Preparations"} CategoryBtn={"Herbal Preparations"} />
-        <AllCategoriesImg CategoryImg={PC} CategoryText={"Personal Care"} CategoryBtn={"Personal Care"} />
-        <AllCategoriesImg CategoryImg={ED} CategoryText={"Energy Drinks"} CategoryBtn={"Energy Drinks"} />
+        <AllCategoriesImg CategoryImg={HB} CategoryText={"Herbal Preparations"} CategoryBtn={<Link to="/category/herbal-preparations">Herbal Preparations</Link>} />
+        <AllCategoriesImg CategoryImg={PC} CategoryText={"Personal Care"} CategoryBtn={<Link to="/category/personal-care">Personal Care</Link>} />
+        <AllCategoriesImg CategoryImg={ED} CategoryText={"Energy Drinks"} CategoryBtn={<Link to="/category/energy-drinks">Energy Drinks</Link>} />
+      </div>
+      <div className="relative w-full p-2">
+        <img className="w-full" src={banner} alt="Img1" />
+        <div className="absolute inset-0 flex flex-col justify-center items-end text-white">
+          <div className="text-right px-8">
+            <h1 className="text-4xl font-bold mb-4">Get Medicines and Health Products<br />of Reputed Brands</h1>
+            <p className="text-lg">Browse our wide range of Ayurveda & Herbal supplements. Buy healthcare products and<br /> health devices at one place.</p>
+            <Link to="/products">
+              <button className="mt-4 bg-[#6cb250] hover:bg-[#3470a1] text-white py-2 px-6 rounded-lg">
+                BUY NOW
+              </button>
+            </Link>
+          </div>
+        </div>
       </div>
     </>
   );
