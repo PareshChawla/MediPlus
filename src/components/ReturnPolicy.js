@@ -21,6 +21,11 @@ const ReturnPolicy = () => {
           RETURN & REFUND POLICY
         </h1>
       </section>
+      <div>
+      <h1 className=" text-black z-[2] text-[40px] relative grid place-items-center pt-10">
+          RETURN & REFUND POLICY
+        </h1>
+      </div>
       <div className="mb-5 m-2 px-4 pt-3 lg:m-3 lg:px-24">
         <div className="flex flex-col md:flex-row gap-10 ">
         <div className="text-[#434f58] flex flex-col gap-5 mt-5 ">
@@ -112,7 +117,7 @@ const ReturnPolicy = () => {
               <h1 className="font-bold text-4xl  text-[#3470a1] text-left">
               Need help?
               </h1>
-              <p className="  lg:leading-7">
+              <p className="  lg:leading-7 pb-14">
               For inquiries concerning returns and refunds, send us an email at email.
               </p>
             </div>
