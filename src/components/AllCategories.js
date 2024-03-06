@@ -23,7 +23,7 @@ const AllCategories = () => {
         </div>
       </div>
       <div className="text-center mx-2 mb-16 bg-[#FBFCFC]">
-        <h1 className="text-4xl text-[#3470a1] font-semibold">
+        <h1 className="text-4xl text-[#3470a1] font-bold">
           All Categories
         </h1>
         <div className="border-t-2 border-[#3470a1] w-[8%] ml-[46%] mt-7"></div>

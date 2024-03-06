@@ -23,7 +23,7 @@ const LatestProducts = () => {
 
   return (
     <div className="text-center m-2 mb-7 bg-[#FBFCFC]">
-      <h1 className="text-4xl text-[#3470a1] font-semibold">
+      <h1 className="text-4xl text-[#3470a1] font-bold">
         Our Latest Products
       </h1>
       <div className="border-t-2 border-[#3470a1] w-[8%] ml-[46%] mt-7"></div>
