@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 const ProductCard = ({ productImg, productTitle }) => {
   return (
@@ -7,7 +8,9 @@ const ProductCard = ({ productImg, productTitle }) => {
         <img className='object-contain w-full h-full' src={productImg} alt="latest-product" />
       </div>
       <p className='mt-2 text-[#3470a1] hover:text-[#6cb250] font-bold'>{productTitle}</p>
+      <Link to="/upload">
       <button className='bg-[#6cb250] hover:bg-[#3470a1] text-white py-1.5 px-5 mt-10'>Shop Now</button>
+      </Link>
     </div>
   );
 };
