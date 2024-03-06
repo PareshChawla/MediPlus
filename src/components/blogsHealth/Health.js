@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import HealthCoursel from "./HealthCoursel";
+import { Link } from "react-router-dom";
 import Med1 from "../../assets/images/blogimg1.jpg";
 import Med2 from "../../assets/images/blogimg2.png";
 import Med3 from "../../assets/images/blogimg3.png";
@@ -20,7 +21,9 @@ const Health = () => {
   return (
     <>
       <section className="relative grid place-items-center h-96 text-5xl font-bold bg-[url(/src/assets/images/blog_img.jpg)]">
+      <Link to="/health">
         <h2 className=" text-[#3470a1] z-[2]">Health</h2>
+      </Link>
       </section>
       <div className="container mx-auto px-8 ">
         <div className="mx-9 mt-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-3 gap-4">

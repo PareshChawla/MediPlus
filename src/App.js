@@ -21,6 +21,7 @@ import EnergyDrinks from "./components/category/EnergyDrinks";
 import Prescription from "./components/category/Prescription";
 import UploadPrescription from "./components/UploadPrescription";
 import EmailJS from 'emailjs-com';
+import Health from "./components/blogsHealth/Health";
 
 EmailJS.init("Zeg7ovdqSlwuboR-4");
 
@@ -104,6 +105,10 @@ export const appRouter = createBrowserRouter([
       {
         path: "/upload",
         element: <UploadPrescription />,
+      },
+      {
+        path: "/health",
+        element: <Health/>,
       },
       
     ],
