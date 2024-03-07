@@ -22,6 +22,7 @@ import Prescription from "./components/category/Prescription";
 import UploadPrescription from "./components/UploadPrescription";
 import EmailJS from 'emailjs-com';
 import Health from "./components/blogsHealth/Health";
+import BabyCare2 from "./components/homeLatestProducts/BabyCare2";
 
 EmailJS.init("Zeg7ovdqSlwuboR-4");
 
@@ -81,6 +82,10 @@ export const appRouter = createBrowserRouter([
       {
         path: "/category/feminine-care",
         element: <FeminineCare />,
+      },
+      {
+        path: "/category/baby-care",
+        element: <BabyCare2/>,
       },
       {
         path: "/category/health-supplements",

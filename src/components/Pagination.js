@@ -10,7 +10,7 @@ const handlePageChange = (pageNumber) => {
     <div className="flex justify-center items-center ">
       <div className="flex justify-between w-64">
         <button
-          className="bg-[#6cb250] hover:bg-blue-700 text-white font-bold py-1.5 px-5"
+          className="bg-[#6cb250] hover:bg-blue-700 text-white font-bold py-1.5 px-5 absolute left-48"
           onClick={() => handlePageChange(currentPage - 1)} 
           disabled={currentPage === 1}
         >
@@ -27,7 +27,7 @@ const handlePageChange = (pageNumber) => {
           );
         })}
         <button
-          className="bg-[#6cb250] hover:bg-blue-700 text-white font-bold py-1.5 px-5 rounded"
+          className="bg-[#6cb250] hover:bg-blue-700 text-white font-bold py-1.5 px-5 rounded absolute right-48"
           onClick={() => handlePageChange(currentPage + 1)} 
           disabled={pages.length}
         >
