@@ -1,9 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react';
 
 const Faq = () => {
-  return (
-    <div>Faq</div>
-  )
-}
+  const [isOpen, setIsOpen] = useState(false);
 
-export default Faq
+  const question = "How does it work?";
+  const answer = "It works fine.";
+  
+
+  return (
+    <div className="cursor-pointer hover:bg-gray-100" onClick={() => setIsOpen(!isOpen)}>
+      <div className="p-4">{question}</div>
+      {isOpen && (
+        <div className="border-t border-gray-200 p-4">
+          {answer}
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default Faq;

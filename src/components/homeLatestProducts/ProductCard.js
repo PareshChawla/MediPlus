@@ -9,7 +9,7 @@ const ProductCard = ({ productImg, productTitle }) => {
       </div>
       <p className='mt-2 text-[#3470a1] hover:text-[#6cb250] font-bold'>{productTitle}</p>
       <Link to="/upload">
-      <button className='bg-[#6cb250] hover:bg-[#3470a1] text-white py-1.5 px-5 mt-10'>Shop Now</button>
+      <button className='bg-[#6cb250] hover:bg-[#3470a1] text-white py-1.5 px-5 mt-auto'>Shop Now</button>
       </Link>
     </div>
   );
