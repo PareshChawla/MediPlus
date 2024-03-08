@@ -28,8 +28,13 @@ const AllCategories = () => {
         </h1>
         <div className="border-t-2 border-[#3470a1] w-[8%] ml-[46%] mt-7"></div>
       </div>
+<<<<<<< HEAD
       <div className="w-[70%] ml-[20%] md:ml-[15%] md:flex md:flex-row flex-col ">
         <AllCategoriesImg CategoryImg={BabyCare} CategoryText={"Baby Care"} CategoryBtn={"Baby Care"} />
+=======
+      <div className="w-[70%] ml-[15%] md:flex md:flex-row flex-col ">
+        <AllCategoriesImg CategoryImg={BabyCare} CategoryText={"Baby Care"} CategoryBtn={<Link to="/category/baby-care">Baby Care</Link>} />
+>>>>>>> c75e5e0e324296b375b0e54449da8de02365ac95
         <AllCategoriesImg CategoryImg={HB} CategoryText={"Herbal Preparations"} CategoryBtn={<Link to="/category/herbal-preparations">Herbal Preparations</Link>} />
         <AllCategoriesImg CategoryImg={PC} CategoryText={"Personal Care"} CategoryBtn={<Link to="/category/personal-care">Personal Care</Link>} />
         <AllCategoriesImg CategoryImg={ED} CategoryText={"Energy Drinks"} CategoryBtn={<Link to="/category/energy-drinks">Energy Drinks</Link>} />
