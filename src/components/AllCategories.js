@@ -28,14 +28,14 @@ const AllCategories = () => {
         </h1>
         <div className="border-t-2 border-[#3470a1] w-[8%] ml-[46%] mt-7"></div>
       </div>
-      <div className="w-[70%] ml-[15%] md:flex md:flex-row flex-col ">
+      <div className="w-[70%] ml-[20%] md:ml-[15%] md:flex md:flex-row flex-col ">
         <AllCategoriesImg CategoryImg={BabyCare} CategoryText={"Baby Care"} CategoryBtn={"Baby Care"} />
         <AllCategoriesImg CategoryImg={HB} CategoryText={"Herbal Preparations"} CategoryBtn={<Link to="/category/herbal-preparations">Herbal Preparations</Link>} />
         <AllCategoriesImg CategoryImg={PC} CategoryText={"Personal Care"} CategoryBtn={<Link to="/category/personal-care">Personal Care</Link>} />
         <AllCategoriesImg CategoryImg={ED} CategoryText={"Energy Drinks"} CategoryBtn={<Link to="/category/energy-drinks">Energy Drinks</Link>} />
       </div>
-      <div className="relative w-full p-2">
-        <img className="w-full" src={banner} alt="Img1" />
+      <div className="relative w-full">
+        <img className="w-full h-[500px] brightness-75 object-cover" src={banner} alt="Img1" />
         <div className="absolute inset-0 flex flex-col justify-center items-end text-white">
           <div className="text-right px-8">
             <h1 className="text-4xl font-bold mb-4">Get Medicines and Health Products<br />of Reputed Brands</h1>

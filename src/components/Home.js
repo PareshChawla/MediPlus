@@ -24,7 +24,6 @@ import Herbal from "../assets/images/helbal.jpg";
 import { FaShippingFast } from "react-icons/fa";
 import { FaAmazonPay } from "react-icons/fa";
 import { FaRegComments } from "react-icons/fa";
-
 import Surgical from "../assets/images/surgical-120x120.jpg";
 import Welcome from "./Welcome";
 import CardFullfillment from "./CardFullfillment";
@@ -33,6 +32,7 @@ import AboutUs from "./homeAboutUs/AboutUs";
 import AllCategories from "./AllCategories";
 import LatestFromOurBlogs from "./LatestFromOurBlogs";
 import FeaturedProducts from "./FeaturedProducts";
+import HomeMedNumAnimate from "./HomeMedNumAnimate";
 
 const PrevArrow = () => {
   return <div className="hidden"></div>;
@@ -134,6 +134,7 @@ const Home = ({ img, medName }) => {
           <AboutUs />
           <AllCategories />
           <FeaturedProducts />
+          <HomeMedNumAnimate />
           <LatestFromOurBlogs />
     </>
   );

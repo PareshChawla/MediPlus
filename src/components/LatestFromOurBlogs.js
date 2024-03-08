@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import BlogsCoursel from "./BlogsCoursel";
 import Medlogo from "../assets/images/medplusLogo.webp";
 import Med1 from "../assets/images/blogimg1.jpg";
@@ -7,13 +7,10 @@ import Med3 from "../assets/images/blogimg3.png";
 import Med4 from "../assets/images/blogimg4.png";
 
 
-const LatestFromOurBlogs = () => {  
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+const LatestFromOurBlogs = () => {
+
   return (
     <>
-      
       <div className="text-center mx-2 mb-16 bg-[#FBFCFC]">
         <h1 className="text-4xl text-[#3470a1] font-bold mt-10">
           Latest From Our Blogs
