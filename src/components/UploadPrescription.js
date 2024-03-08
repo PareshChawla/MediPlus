@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ContactUsImg from "../assets/images/upload.jpeg";
 import Flag from "../assets/images/flag.png";
 import { FaHandHoldingHeart } from "react-icons/fa";
@@ -6,6 +6,10 @@ import QRCode from "qrcode.react";
 import axios from "axios";
 
 const UploadPrescription = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const qrData = "https://web.whatsapp.com/";
   const cities = ["Mumbai", "Pune", "Noida", "Kolkata", "Delhi"];
 
