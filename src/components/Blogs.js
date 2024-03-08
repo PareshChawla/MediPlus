@@ -24,7 +24,7 @@ const Blog = () => {
         <h2 className=" text-[#3470a1] z-[2]">Blogs</h2>
       </section>
       <div className="container mx-auto p-3 ">
-        <div className=" mx-9 mt-2 grid grid-cols-1 smgrid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 ">
+        <div className=" mx-9 mt-10 mb-20 grid grid-cols-1 smgrid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 ">
           <BlogsCoursel
             img1={Medlogo}
             img={Med1}

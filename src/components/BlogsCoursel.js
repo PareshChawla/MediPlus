@@ -43,5 +43,4 @@ const BlogsCarousel = ({
   );
 };
 
-
 export default BlogsCarousel;

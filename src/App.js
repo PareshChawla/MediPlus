@@ -23,6 +23,19 @@ import UploadPrescription from "./components/UploadPrescription";
 import EmailJS from 'emailjs-com';
 import Health from "./components/blogsHealth/Health";
 import BabyCare2 from "./components/homeLatestProducts/BabyCare2";
+import MediplusPharmacy from "./components/blogsHealth/MediplusPharmacy";
+import Health1 from "./components/blogsHealth/Health/Health1";
+import Health2 from "./components/blogsHealth/Health/Health2";
+import Health3 from "./components/blogsHealth/Health/Health3";
+import Health4 from "./components/blogsHealth/Health/Health4";
+import Health5 from "./components/blogsHealth/Health/Health5";
+import Health6 from "./components/blogsHealth/Health/Health6";
+import Health7 from "./components/blogsHealth/Health/Health7";
+import Health8 from "./components/blogsHealth/Health/Health8";
+import Health9 from "./components/blogsHealth/Health/Health9";
+import Health10 from "./components/blogsHealth/Health/Health10";
+import Health11 from "./components/blogsHealth/Health/Health11";
+import Health12 from "./components/blogsHealth/Health/Health12";
 
 EmailJS.init("Zeg7ovdqSlwuboR-4");
 
@@ -114,6 +127,58 @@ export const appRouter = createBrowserRouter([
       {
         path: "/health",
         element: <Health/>,
+      },
+      {
+        path: "/mediplusPharmacy",
+        element: <MediplusPharmacy/>,
+      },
+      {
+        path: "/health1",
+        element: <Health1/>,
+      },
+      {
+        path: "/health2",
+        element: <Health2/>,
+      },
+      {
+        path: "/health3",
+        element: <Health3/>,
+      },
+      {
+        path: "/health4",
+        element: <Health4/>,
+      },
+      {
+        path: "/health5",
+        element: <Health5/>,
+      },
+      {
+        path: "/health6",
+        element: <Health6/>,
+      },
+      {
+        path: "/health7",
+        element: <Health7/>,
+      },
+      {
+        path: "/health8",
+        element: <Health8/>,
+      },
+      {
+        path: "/health9",
+        element: <Health9/>,
+      },
+      {
+        path: "/health10",
+        element: <Health10/>,
+      },
+      {
+        path: "/health11",
+        element: <Health11/>,
+      },
+      {
+        path: "/health12",
+        element: <Health12/>,
       },
       
     ],
