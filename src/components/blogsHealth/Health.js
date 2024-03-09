@@ -18,6 +18,7 @@ const Health = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   return (
     <>
       <section className="relative grid place-items-center h-96 text-5xl font-bold bg-[url(/src/assets/images/blog_img.jpg)]">
@@ -27,6 +28,7 @@ const Health = () => {
         <div className="mx-9 mt-10 mb-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-3 gap-4">
           <HealthCoursel
             img={Med1}
+            to="/health1"
             healthtitle={"HEALTH"}
             healthName={
               <Link to="/health1">
@@ -40,6 +42,7 @@ const Health = () => {
           />
           <HealthCoursel
             img={Med2}
+            to="/health2"
             healthtitle={"HEALTH"}
             healthName={
               <Link to="/health2">
@@ -53,6 +56,7 @@ const Health = () => {
           />
           <HealthCoursel
             img={Med3}
+            to="/health3"
             healthtitle={"HEALTH"}
             healthName={
               <Link to="/health3">
@@ -66,6 +70,7 @@ const Health = () => {
           />
           <HealthCoursel
             img={Med4}
+            to="/health4"
             healthtitle={"HEALTH"}
             healthName={
               <Link to="/health4">Natural Ways to Lessen Cold and Cough</Link>
@@ -77,6 +82,7 @@ const Health = () => {
           />
           <HealthCoursel
             img={Med5}
+            to="/health5"
             healthtitle={"HEALTH"}
             healthName={
               <Link to="/health5">
@@ -90,6 +96,7 @@ const Health = () => {
           />
           <HealthCoursel
             img={Med6}
+            to="/health6"
             healthtitle={"HEALTH"}
             healthName={
               <Link to="/health6">
@@ -104,6 +111,7 @@ const Health = () => {
           />
           <HealthCoursel
             img={Med7}
+            to="/health7"
             healthtitle={"HEALTH"}
             healthName={
               <Link to="/health7">
@@ -117,6 +125,7 @@ const Health = () => {
           />
           <HealthCoursel
             img={Med8}
+            to="/health8"
             healthtitle={"HEALTH"}
             healthName={
               <Link to="/health8">
@@ -130,6 +139,7 @@ const Health = () => {
           />
           <HealthCoursel
             img={Med9}
+            to="/health9"
             healthtitle={"HEALTH"}
             healthName={
               <Link to="/health9">
@@ -143,6 +153,7 @@ const Health = () => {
           />
           <HealthCoursel
             img={Med10}
+            to="/health10"
             healthtitle={"HEALTH"}
             healthName={
               <Link to="/health10">
@@ -156,6 +167,7 @@ const Health = () => {
           />
           <HealthCoursel
             img={Med11}
+            to="/health11"
             healthtitle={"HEALTH"}
             healthName={
               <Link to="/health11">
@@ -169,6 +181,7 @@ const Health = () => {
           />
           <HealthCoursel
             img={Med12}
+            to="/health12"
             healthtitle={"HEALTH"}
             healthName={
               <Link to="/health12">

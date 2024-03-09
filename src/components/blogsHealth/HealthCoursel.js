@@ -7,6 +7,7 @@ const HealthCarousel = ({
   healthName,
   healthDetails,
   healthpost,
+  to,
 }) => {
   return (
     <div className="bg-white shadow-md mb-5 mt-8 px-2 pt-1 lg:m-2 overflow-hidden flex flex-col">
@@ -18,8 +19,15 @@ const HealthCarousel = ({
       <h2 className="mt-2 mx-6 mb-4 text-xl text-[#3470a1] cursor-pointer font-bold">
         {healthName}
       </h2>
+
       <div className="mt-5 overflow-hidden scale-110 cursor-pointer">
-        <img className="object-contain w-full h-full" src={img} alt="healths" />
+        <Link to={to}>
+          <img
+            className="object-contain w-full h-full"
+            src={img}
+            alt="healths"
+          />
+        </Link>
       </div>
       <div className="mt-7 mx-5 flex-grow ">
         <p className="text-gray-600 text-ls">{healthDetails}</p>

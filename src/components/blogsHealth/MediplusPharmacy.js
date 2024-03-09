@@ -57,6 +57,7 @@ const MediplusPharmacy = () => {
         <div className=" mx-9 mt-10 mb-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-3 gap-4">
           <MediplusPharmacyCoursel
             img={Med2}
+            to="/health2"
             mediplustitle={"HEALTH"}
             mediplusName={
               <Link to="/health2">
@@ -71,6 +72,7 @@ const MediplusPharmacy = () => {
 
           <MediplusPharmacyCoursel
             img={Med5}
+            to="/health5"
             mediplustitle={"HEALTH"}
             mediplusName={
               <Link to="/health5">
@@ -85,6 +87,7 @@ const MediplusPharmacy = () => {
 
           <MediplusPharmacyCoursel
             img={Med3}
+            to="/health3"
             mediplustitle={"HEALTH"}
             mediplusName={
               <Link to="/health3">
@@ -98,6 +101,7 @@ const MediplusPharmacy = () => {
           />
           <MediplusPharmacyCoursel
             img={Med6}
+            to="/health6"
             mediplustitle={"HEALTH"}
             mediplusName={
               <Link to="/health6">
@@ -113,6 +117,7 @@ const MediplusPharmacy = () => {
 
           <MediplusPharmacyCoursel
             img={Med1}
+            to="/health1"
             mediplustitle={"HEALTH"}
             mediplusName={
               <Link to="/health1">
@@ -127,6 +132,7 @@ const MediplusPharmacy = () => {
 
           <MediplusPharmacyCoursel
             img={Med4}
+            to="/health4"
             mediplustitle={"HEALTH"}
             mediplusName={
               <Link to="/health4">Natural Ways to Lessen Cold and Cough</Link>
@@ -138,6 +144,7 @@ const MediplusPharmacy = () => {
           />
           <MediplusPharmacyCoursel
             img={Med7}
+            to="/health7"
             mediplustitle={"HEALTH"}
             mediplusName={
               <Link to="/health7">
@@ -151,6 +158,7 @@ const MediplusPharmacy = () => {
           />
           <MediplusPharmacyCoursel
             img={Med8}
+            to="/health8"
             mediplustitle={"HEALTH"}
             mediplusName={
               <Link to="/health8">
@@ -164,6 +172,7 @@ const MediplusPharmacy = () => {
           />
           <MediplusPharmacyCoursel
             img={Med9}
+            to="/health9"
             mediplustitle={"HEALTH"}
             mediplusName={
               <Link to="/health9">
@@ -177,6 +186,7 @@ const MediplusPharmacy = () => {
           />
           <MediplusPharmacyCoursel
             img={Med10}
+            to="/health10"
             mediplustitle={"HEALTH"}
             mediplusName={
               <Link to="/health10">
@@ -190,6 +200,7 @@ const MediplusPharmacy = () => {
           />
           <MediplusPharmacyCoursel
             img={Med11}
+            to="/health11"
             mediplustitle={"HEALTH"}
             mediplusName={
               <Link to="/health11">
@@ -203,6 +214,7 @@ const MediplusPharmacy = () => {
           />
           <MediplusPharmacyCoursel
             img={Med12}
+            to="/health12"
             mediplustitle={"HEALTH"}
             mediplusName={
               <Link to="/health12">

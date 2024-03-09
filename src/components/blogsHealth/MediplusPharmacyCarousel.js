@@ -7,6 +7,7 @@ const MediplusPharmacyCarousel = ({
   mediplusName,
   mediplusDetails,
   medipluspost,
+  to,
 }) => {
   return (
     <div className="bg-white shadow-md mb-5 mt-8 px-2 pt-1 lg:m-2 overflow-hidden flex flex-col">
@@ -19,11 +20,13 @@ const MediplusPharmacyCarousel = ({
         {mediplusName}
       </h2>
       <div className="mt-5 overflow-hidden scale-110 cursor-pointer">
-        <img
-          className="object-contain w-full h-full"
-          src={img}
-          alt="mediplus"
-        />
+        <Link to={to}>
+          <img
+            className="object-contain w-full h-full"
+            src={img}
+            alt="mediplus"
+          />
+        </Link>
       </div>
       <div className="mt-7 mx-5 flex-grow ">
         <p className="text-gray-600 text-ls">{mediplusDetails}</p>
