@@ -13,6 +13,7 @@ import Med9 from "../assets/images/blogimg9.png";
 import Med10 from "../assets/images/blogimg10.png";
 import Med11 from "../assets/images/blogimg11.png";
 import Med12 from "../assets/images/blogimg12.png";
+import { Link } from "react-router-dom";
 
 const Blog = () => {
   useEffect(() => {
@@ -29,7 +30,7 @@ const Blog = () => {
             img1={Medlogo}
             img={Med1}
             blogtitle={"Health"}
-            blogName={"Soya Chunks' Nutritional Values and Health Benefits"}
+            blogName={<Link to="/health1">Soya Chunks' Nutritional Values and Health Benefits</Link>}
             blogDetails={
               "Soya chunks are renowned for their impressive nutritional content, making them an…"
             }
@@ -39,7 +40,7 @@ const Blog = () => {
             img1={Medlogo}
             img={Med2}
             blogtitle={"Health"}
-            blogName={"Controlling Hypertension to Live a Healthier Life"}
+            blogName={<Link to="/health2">Controlling Hypertension to Live a Healthier Life</Link>}
             blogDetails={
               "Our world moves quickly, so it's simple to forget the..."
             }
@@ -49,7 +50,7 @@ const Blog = () => {
             img1={Medlogo}
             img={Med3}
             blogtitle={"Health"}
-            blogName={"How to Naturally Raise Your Platelet Count"}
+            blogName={<Link to="/health3">How to Naturally Raise Your Platelet Count</Link>}
             blogDetails={
               "Sustaining an appropriate platelet count is necessary for appropriate blood coagulation and..."
             }
@@ -59,7 +60,7 @@ const Blog = () => {
             img1={Medlogo}
             img={Med4}
             blogtitle={"Health"}
-            blogName={"Natural Ways to Lessen Cold and Cough"}
+            blogName={<Link to="/health4">Natural Ways to Lessen Cold and Cough</Link>}
             blogDetails={
               "With the changing of the seasons, the wave of colds and coughs might become..."
             }
@@ -69,7 +70,7 @@ const Blog = () => {
             img1={Medlogo}
             img={Med5}
             blogtitle={"Health"}
-            blogName={"How Can Wintertime Hair Loss Be Prevented?"}
+            blogName={<Link to="/health5">How Can Wintertime Hair Loss Be Prevented?</Link>}
             blogDetails={
               "Wintertime hair loss can be caused by a number of things, such as dry..."
             }
@@ -80,7 +81,7 @@ const Blog = () => {
             img={Med6}
             blogtitle={"Health"}
             blogName={
-              "Herbal teas' advantages for reducing stress and promoting relaxation"
+              <Link to="/health6">Herbal teas' advantages for reducing stress and promoting relaxation</Link>
             }
             blogDetails={
               "Since ancient times, people have drank herbal tea for its many health advantages..."
@@ -91,7 +92,7 @@ const Blog = () => {
             img={Med7}
             img1={Medlogo}
             blogtitle={"Health"}
-            blogName={"Five Natural Ways to Treat Dry Skin in the Winter"}
+            blogName={<Link to="/health7">Five Natural Ways to Treat Dry Skin in the Winter</Link>}
             blogDetails={
               "When the winter cold comes in, a lot of us struggle with..."
             }
@@ -101,7 +102,7 @@ const Blog = () => {
             img={Med8}
             img1={Medlogo}
             blogtitle={"Health"}
-            blogName={"How to Determine Your Skin Type and What It Is?"}
+            blogName={<Link to="/health8">How to Determine Your Skin Type and What It Is?</Link>}
             blogDetails={
               "Since your skin is as distinct as you are, knowing its own characteristics..."
             }
@@ -112,7 +113,7 @@ const Blog = () => {
             img1={Medlogo}
             blogtitle={"Health"}
             blogName={
-              "Six Items to Consume Daily to Promote Better Brain Health"
+              <Link to="/health9">Six Items to Consume Daily to Promote Better Brain Health</Link>
             }
             blogDetails={
               "Enhancing brain health is critical to general health and cognitive performance. Including the following..."
@@ -123,7 +124,7 @@ const Blog = () => {
             img={Med10}
             img1={Medlogo}
             blogtitle={"Health"}
-            blogName={"How to Reduce Skin Inflammation Naturally"}
+            blogName={<Link to="/health10">How to Reduce Skin Inflammation Naturally</Link>}
             blogDetails={
               "Don't forget to run a patch test before applying any of these fixes..."
             }
@@ -133,7 +134,7 @@ const Blog = () => {
             img={Med11}
             img1={Medlogo}
             blogtitle={"Health"}
-            blogName={"Six Things About High Blood Pressure You Should Know"}
+            blogName={<Link to="/health11">Six Things About High Blood Pressure You Should Know</Link>}
             blogDetails={
               "Hypertension, another name for high blood pressure, is a frequent medical problem..."
             }
@@ -143,7 +144,7 @@ const Blog = () => {
             img={Med12}
             img1={Medlogo}
             blogtitle={"Health"}
-            blogName={"Five Easy Steps to Get Past a Weight Loss Plateau"}
+            blogName={<Link to="/health12">Five Easy Steps to Get Past a Weight Loss Plateau</Link>}
             blogDetails={
               "It can be discouraging to reach a weight reduction plateau, but it's crucial to..."
             }

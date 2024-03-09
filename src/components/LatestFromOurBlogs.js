@@ -5,7 +5,7 @@ import Med1 from "../assets/images/blogimg1.jpg";
 import Med2 from "../assets/images/blogimg2.png";
 import Med3 from "../assets/images/blogimg3.png";
 import Med4 from "../assets/images/blogimg4.png";
-
+import { Link } from "react-router-dom";
 
 const LatestFromOurBlogs = () => {
 
@@ -23,7 +23,7 @@ const LatestFromOurBlogs = () => {
             img1={Medlogo}
             img={Med1}
             blogtitle={"Health"}
-            blogName={"Soya Chunks' Nutritional Values and Health Benefits"}
+            blogName={<Link to="/health1">Soya Chunks' Nutritional Values and Health Benefits</Link>}
             blogDetails={
               "Soya chunks are renowned for their impressive nutritional content, making them an…"
             }
@@ -33,7 +33,7 @@ const LatestFromOurBlogs = () => {
             img1={Medlogo}
             img={Med2}
             blogtitle={"Health"}
-            blogName={"Controlling Hypertension to Live a Healthier Life"}
+            blogName={<Link to="/health2">Controlling Hypertension to Live a Healthier Life</Link>}
             blogDetails={
               "Our world moves quickly, so it's simple to forget the..."
             }
@@ -43,7 +43,7 @@ const LatestFromOurBlogs = () => {
             img1={Medlogo}
             img={Med3}
             blogtitle={"Health"}
-            blogName={"How to Naturally Raise Your Platelet Count"}
+            blogName={<Link to="/health3">How to Naturally Raise Your Platelet Count</Link>}
             blogDetails={
               "Sustaining an appropriate platelet count is necessary for appropriate blood coagulation and..."
             }
@@ -53,7 +53,7 @@ const LatestFromOurBlogs = () => {
             img1={Medlogo}
             img={Med4}
             blogtitle={"Health"}
-            blogName={"Natural Ways to Lessen Cold and Cough"}
+            blogName={<Link to="/health4">Natural Ways to Lessen Cold and Cough</Link>}
             blogDetails={
               "With the changing of the seasons, the wave of colds and coughs might become..."
             }
