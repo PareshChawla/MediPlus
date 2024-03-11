@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Pagination from '../Pagination';
 import ProductsCoursel from '../ProductsCoursel';
+import Dropdown from '../Dropdown'
 import Med1 from "../../assets/images/babyCareImg/A1.jpeg";
 import Med2 from "../../assets/images/babyCareImg/A2.jpg";
 import Med3 from "../../assets/images/babyCareImg/A3.jpg";
@@ -246,6 +247,10 @@ const BabyCare2 = () => {
       </section>
         <div className="container mx-auto p-8 md:flex-row">
         {/* <h1 className="text-4xl font-bold mb-4 text-center text-[#3470a1]">Health Supplements</h1> */}
+        <Dropdown/>
+        <br/>
+        <br/>
+        <br/>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
         {currentPost.map((babyCare, index) => {
             return (
