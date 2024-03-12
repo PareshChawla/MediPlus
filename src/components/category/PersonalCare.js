@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import ProdutsCarousel from "../ProductsCoursel";
+import Dropdown from "../Dropdown";
 import Med1 from "../../assets/images/personalCareImg/pc1.jpg";
 import Med2 from "../../assets/images/personalCareImg/pc2.jpg";
 import Med3 from "../../assets/images/personalCareImg/pc3.jpg";
@@ -27,6 +28,10 @@ const PersonalCare = () => {
       </section>
       <div className="container mx-auto p-40 md:flex-row">
         {/* <h1 className="text-4xl font-bold mb-4 text-center text-[#3470a1]">Health Supplements</h1> */}
+        <Dropdown/>
+      <br/>
+      <br/>
+      <br/>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           <ProdutsCarousel
             img={Med1}
