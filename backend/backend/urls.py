@@ -11,4 +11,8 @@ urlpatterns = [
         views.submit_form,
         name="patient_create_view",
     ),
+    path('api/post-comment/',
+          views.post_comment,
+            name='post_comment_view'),
+    path('api/comments/', views.get_comments, name='get_comments'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,11 +1,17 @@
 # from django.shortcuts import render
-# from django.http import JsonResponse
+from django.http import JsonResponse
 # from .models import Patient
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework import serializers
 from app.models import Patient
 from rest_framework.decorators import api_view
+from django.shortcuts import render
+# from .forms import CommentForm
+from .models import Comment
+from django import forms
+from .models import Comment
+
 
 # def submit_form(request):
 #     if request.method == 'POST':
@@ -52,3 +58,31 @@ def submit_form(request, format=None):
                 status=status.HTTP_201_CREATED,
             )
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+
+class PostCommentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Comment
+        fields = (
+            
+            "name",
+            "comment",
+        )
+
+
+@api_view(["POST"])
+def post_comment(request, format=None):
+    if request.method == "POST":
+        serializer = PostCommentSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(
+                {"message": "comment saved  Successfully"},
+                status=status.HTTP_201_CREATED,
+            )
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+def get_comments(request):
+    comments = Comment.objects.all()  # Fetch all comments from the database
+    data = [{'name': comment.name, 'comment': comment.comment} for comment in comments]
+    return JsonResponse(data, safe=False)  # Return the comments as JSON response    

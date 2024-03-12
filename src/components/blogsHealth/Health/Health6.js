@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import medlogo from "../../../assets/images/medilogo1.jpg";
 import blogimg6 from "../../../assets/images/blogimg6.png";
@@ -7,7 +6,75 @@ import { BiLogoFacebookCircle } from "react-icons/bi";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { BiLogoLinkedinSquare } from "react-icons/bi";
 import { BiLogoPinterest } from "react-icons/bi";
-const health1 = () => {
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+
+const Health6 = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    fetchComments();
+  }, []);
+
+  const [formData, setFormData] = useState({
+    name: "",
+
+    comment: "",
+  });
+
+  const [comments, setComments] = useState([]);
+
+  const fetchComments = async () => {
+    try {
+      const response = await axios.get("http://127.0.0.1:8000/api/comments/");
+      setComments(response.data);
+    } catch (error) {
+      console.log("Error fetching comments:", error);
+    }
+  };
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    // changes formData variable name to sendFormData to avoid conflict of formData's and formData object - changed by Thouseef (Remove this comment after reviewing)
+    const sendFormData = new FormData(); // Create FormData object for file upload
+    for (const key in formData) {
+      sendFormData.append(key, formData[key]);
+    }
+    try {
+      const response = await axios.post(
+        "http://127.0.0.1:8000/api/post-comment/",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data", // Set content type for file upload
+          },
+        }
+      );
+      // Handle successful response (e.g., display success message)
+      console.log("Data submitted successfully:", response.data);
+      fetchComments();
+      setComments([...comments, formData]);
+      setFormData({
+        // Clear form data after successful submission
+        name: "",
+
+        comment: "",
+      });
+      window.location.reload();
+    } catch (error) {
+      console.error("Error submitting data:", error);
+      // Handle errors (e.g., display error message)
+    }
+  };
+
   return (
     <>
       <section className="relative grid place-items-center h-80 bg-[#F2F7F6] w-full">
@@ -167,91 +234,68 @@ const health1 = () => {
             <BiLogoLinkedinSquare size={18} className="cursor-pointer" />
           </a>
         </div>
-
-        <div className="py-20">
-          <h2 class="text-lg font-semibold text-[#3470a1] mb-2">
+        <div className="py-20 flex flex-col items-left ml-11">
+          <h2 className="text-lg font-semibold text-[#3470a1] mb-2">
             Leave a Reply
           </h2>
 
-          <form class="flex flex-wrap">
-            <div class="mb-4 flex-grow mr-4">
-              <label for="name" class="block text-sm font-medium text-gray-700">
-                Name<span class="text-red-500">*</span>
+          <form id="postComment" onSubmit={handleSubmit} className="flex flex-col items-start">
+            <div className="mb-4">
+              <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+                Name<span className="text-red-500">*</span>
               </label>
               <input
+                onChange={handleChange}
+                value={formData.name}
                 type="text"
                 id="name"
                 name="name"
-                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                className={`w-full p-2 mt-1 focus:ring-indigo-500 focus:border-indigo-500 block  shadow-sm sm:text-sm border-gray-300 rounded-md`}
                 required
               />
             </div>
-
-            <div class="mb-4 flex-grow mr-4">
-              <label
-                for="email"
-                class="block text-sm font-medium text-gray-700"
-              >
-                Email<span class="text-red-500">*</span>
+            <div className="mb-4">
+              <label htmlFor="comment" className="block text-sm font-medium text-gray-700">
+                Feedback
               </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                required
-              />
+              <textarea
+                onChange={handleChange}
+                value={formData.comment}
+                id="comment"
+                name="comment"
+                rows="3"
+                className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-[500px] shadow-sm sm:text-sm border-gray-300 rounded-md"
+              ></textarea>
             </div>
-            <div class="mb-4 flex-grow mr-4">
-              <label
-                for="Website"
-                class="block text-sm font-medium text-gray-700"
-              >
-                Website<span class="text-red-500">*</span>
-              </label>
-              <input
-                type="text"
-                id="website"
-                name="website"
-                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                required
-              />
-            </div>
-          </form>
 
-          <div class="flex items-center mb-4 py-2">
-            <input type="checkbox" id="publish" name="publish" class="mr-2" />
-            <label for="publish" class="text-sm text-gray-700">
-              Your email address will not be published. Required fields are
-              marked *
-            </label>
-          </div>
-
-          <div class="mb-4 flex-grow">
-            <label
-              for="comment"
-              class="block text-sm font-medium text-gray-700"
+            <button
+              type="submit"
+              className="px-4 py-2 font-medium rounded-md text-white bg-green-500 hover:bg-blue-500"
             >
-              Add Comments
-            </label>
-            <textarea
-              id="comment"
-              name="comment"
-              rows="3"
-              class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-[500px] shadow-sm sm:text-sm border-gray-300 rounded-md"
-            ></textarea>
-          </div>
-
-          <button
-            type="submit"
-            class="inline-flex items-center px-4 py-2 font-medium rounded-md text-white bg-green-500 hover:bg-blue-500  "
-          >
-            Post Comment
-          </button>
+              Post Comment
+            </button>
+          </form>
         </div>
-      </div>
+        <div>
+          {/* Header for Comments Section */}
+          <h2 className="text-lg font-semibold text-[#3470a1] ml-11 mt-5 mb-2">
+            Comments
+          </h2>
+
+          {/* Display submitted comments */}
+          {comments.map((comment, index) => (
+            <div key={index} className="bg-gray-100 p-4 mt-4 rounded-md mb-5 ml-11">
+              <h3 className="text-lg font-semibold">{comment.name}</h3>
+              <p>{comment.comment}</p>
+            </div>
+          ))}
+        </div>
+
+
+
+      </div >
     </>
   );
 };
 
-export default health1;
+export default Health6;

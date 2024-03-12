@@ -12,5 +12,17 @@ class Patient(models.Model):
     prescription = models.FileField(upload_to='prescriptions')
     definition = models.TextField()
     
+
+
+    
+class Comment(models.Model):
+    name = models.CharField(max_length=255)
+    comment = models.TextField()
     def __str__(self) -> str:
         return self.name
+    
+
+    
+
+    
+
