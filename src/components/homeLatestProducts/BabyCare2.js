@@ -36,17 +36,17 @@ const imageSource =
   {
     src: Med2,
     name: "Cerelac Stage 1 Cereal BIB Rice 300gm",
-    price: "12$"
+    price: "10$"
   },
   {
     src: Med3,
     name: "Cerelac Stage 1 Cereal Wheat Apple Ref 300gm",
-    price: "12$"
+    price: "10$"
   },
   {
     src: Med4,
     name: "Cerelac Stage 1 Powder BIB Wheat Apple 300gm",
-    price: "12$"
+    price: "10$"
   },
   {
     src: Med5,
@@ -71,17 +71,17 @@ const imageSource =
   {
     src: Med9,
     name: "Cerelac Stage 2 Cereal Wheat Orange 300gm",
-    price: "12$"
+    price: "9$"
   },
   {
     src: Med10,
     name: "Cerelac Stage 2 Powder Wheat Apple Chry 300gm",
-    price: "12$"
+    price: "9$"
   },
   {
     src: Med11,
     name: "Cerelac Stage 3 Cereal 4m/grn Dalveg 300gm",
-    price: "12$"
+    price: "9$"
   },
   {
     src: Med12,
@@ -101,12 +101,12 @@ const imageSource =
   {
     src: Med15,
     name: "Chicco Baby Moments Gift Pack Blue 0M+ 1s",
-    price: "12$"
+    price: "20$"
   },
   {
     src: Med16,
     name: "Chicco Baby Soap Tri Pack 100gm",
-    price: "12$"
+    price: "8$"
   },
   {
     src: Med17,
@@ -116,12 +116,12 @@ const imageSource =
   {
     src: Med18,
     name: "Cerelac Stage 5 Powder 5Grains & Fruits 300gm",
-    price: "12$"
+    price: "5$"
   },
   {
     src: Med19,
     name: "Chicco Baby Soft Cleansing Wipes 20pc",
-    price: "12$"
+    price: "5$"
   },
   {
     src: Med20,
@@ -166,7 +166,7 @@ const imageSource =
   {
     src: Med18,
     name: "Cerelac Stage 5 Powder 5Grains & Fruits 300gm",
-    price: "12$"
+    price: "32$"
   },
   {
     src: Med7,
@@ -176,12 +176,12 @@ const imageSource =
   {
     src: Med8,
     name: "Cerelac Stage 2 Cereal BIB Rice Veg 300gm",
-    price: "12$"
+    price: "2$"
   },
   {
     src: Med9,
     name: "Cerelac Stage 2 Cereal Wheat Orange 300gm",
-    price: "12$"
+    price: "35$"
   },
   {
     src: Med10,
@@ -191,7 +191,7 @@ const imageSource =
   {
     src: Med11,
     name: "Cerelac Stage 3 Cereal 4m/grn Dalveg 300gm",
-    price: "12$"
+    price: "46$"
   },
   {
     src: Med12,
@@ -206,7 +206,7 @@ const imageSource =
   {
     src: Med14,
     name: "Chicco Baby Bath Foaming 500ml",
-    price: "12$"
+    price: "64$"
   },
   {
     src: Med15,
@@ -230,6 +230,23 @@ const BabyCare2 = () => {
   // eslint-disable-next-line
   const [postsPerPage, setPostsPerPage] = useState(24);
 
+  const [selectedOption, setSelectedOption] = useState("Default sorting");
+
+  const handleSortChange = (selectedValue) => {
+    setSelectedOption(selectedValue);
+  };
+
+  let sortedProducts = [...imageSource]; 
+
+  if (selectedOption === "Sort by price: low to high") {
+    imageSource.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
+  } else if (selectedOption === "Sort by price: high to low") {
+    imageSource.sort((a, b) => parseFloat(b.price) - parseFloat(a.price));
+  }else if(selectedOption === "Default sorting"){
+    sortedProducts.sort = [...imageSource]
+  }
+
+
   let pages = [];
 
   for (let i = 1; i <= Math.ceil(imageSource?.length / postsPerPage); i++) {
@@ -247,7 +264,7 @@ const BabyCare2 = () => {
       </section>
         <div className="container mx-auto p-8 md:flex-row">
         {/* <h1 className="text-4xl font-bold mb-4 text-center text-[#3470a1]">Health Supplements</h1> */}
-        <Dropdown/>
+        <Dropdown handleSortChange={handleSortChange}/>
         <br/>
         <br/>
         <br/>
@@ -259,7 +276,7 @@ const BabyCare2 = () => {
                 img={babyCare.src}
                 medName={babyCare.name}
                 // medDetails={babyCare.details}
-                price={"12$"}
+                price={babyCare.price}
               />
             )
           })}

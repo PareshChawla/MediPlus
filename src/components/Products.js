@@ -45,25 +45,25 @@ const imageSource =
       src: Med1,
       name: "A to Z Gold Cap",
       details: "10s Form-Tab",
-      price: "12$"
+      price: "1$"
     },
     {
       src:Med2,
       name: "A to Z NS Syp",
       details: "10s Form-Syrup",
-      price: "12$"
+      price: "4$"
     },
     {
       src:Med3,
       name: "A-Derma Gel Foaming 100ml",
       details: "10s Form-Gel",
-      price: "12$"
+      price: "13$"
     },
     {
       src:Med4,
       name: "Ab Flo Cap 10s",
       details: "10s Form-Capsule",
-      price: "12$"
+      price: "5$"
     },
     {
       src:Med5,
@@ -75,7 +75,7 @@ const imageSource =
       src:Med6,
       name: "Ab Phylline Cap 10s",
       details: "10s Form-Capsule",
-      price: "12$"
+      price: "34$"
     },
     {
       src:Med7,
@@ -93,13 +93,13 @@ const imageSource =
       src:Med9,
       name: "Absolut Cap 10s",
       details: "10s Form-Capsule",
-      price: "12$"
+      price: "24$"
     },
     {
       src:Med10,
       name: "Abzorb Powder 100gm",
       details: "10s Form-Powder",
-      price: "12$"
+      price: "19$"
     },
     {
       src:Med11,
@@ -111,7 +111,7 @@ const imageSource =
       src:Med12,
       name: "Acglicolic Liposomal Serum 30ml",
       details: "10s Form-Serum",
-      price: "12$"
+      price: "39$"
     },
     {
       src:Med13,
@@ -135,7 +135,7 @@ const imageSource =
       src:Med16,
       name: "Acnelak soap",
       details: "Form-Soap",
-      price: "12$"
+      price: "8$"
     },
     {
       src:Med20,
@@ -177,7 +177,7 @@ const imageSource =
       src:Med26,
       name: "Add Tears Eye Drop 10ml",
       details: "10s Form-Capsule",
-      price: "12$"
+      price: "54$"
     },
     {
       src:Med27,
@@ -189,37 +189,37 @@ const imageSource =
       src:Med28,
       name:"Alkasol Syp 100ml",
       details:"Form-Syrup",
-      price:"12$"
+      price:"7$"
     },
     {
       src:Med29,
       name:"All 9 Cap 10s",
       details:"Form-Capsule",
-      price:"12$"
+      price:"35$"
     },
     {
       src:Med30,
       name:"Alsamp Eye Drop 10ml",
       details:"From-Eye drop",
-      price:"12$"
+      price:"4$"
     },
     {
       src:Med31,
       name:"Amace BP Tab 10s",
       details:"Form-tablet",
-      price:"12$"
+      price:"32$"
     },
     {
       src:Med32,
       name:"Ambulax Tab 10s",
       details:"Form-Tablet",
-      price:"12$"
+      price:"1$"
     },
     {
       src:Med33,
       name:"Amdepin AT Tab 14s",
       details:"Form-Tablet",
-      price:"12$"
+      price:"34$"
     },
     {
       src:Med34,
@@ -237,7 +237,7 @@ const imageSource =
       src:Med36,
       name:"Ambrolite D Plus Syp 100ml",
       details:"Form-Tablet",
-      price:"12$"
+      price:"9$"
     },
   ]
 
@@ -252,6 +252,21 @@ const Products = () => {
   const [currentPage, setCurrentPage] = useState(1);
   // eslint-disable-next-line
   const [postsPerPage, setPostsPerPage] = useState(12);
+
+  const [selectedOption, setSelectedOption] = useState("Default sorting");
+
+  const handleSortChange = (selectedValue) => {
+    setSelectedOption(selectedValue);
+  };
+
+
+  if (selectedOption === "Sort by price: low to high") {
+    imageSource.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
+  } else if (selectedOption === "Sort by price: high to low") {
+    imageSource.sort((a, b) => parseFloat(b.price) - parseFloat(a.price));
+  } else{
+    
+  }
 
   let pages = [];
 
@@ -271,7 +286,7 @@ const Products = () => {
       </section>
       <div className="container mx-auto p-40 md:flex-row">
         <h1 className="text-4xl font-bold mb-4 text-center text-[#3470a1]">Our Products</h1>
-        <Dropdown/>
+        <Dropdown handleSortChange={handleSortChange}/>
         <br/>
         <br/>
         <br/>
@@ -283,7 +298,7 @@ const Products = () => {
                 img={product.src}
                 medName={product.name}
                 medDetails={product.details}
-                price={"12$"}
+                price={product.price}
               />
             )
           })}
