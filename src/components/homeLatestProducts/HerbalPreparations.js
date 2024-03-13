@@ -10,12 +10,12 @@ import hp6 from "../../assets/images/herbalPreparationsImg/hp6.jpg";
 const HerbalPreparations = () => {
   return (
     <div className='bg-white p-10 mx-16 flex flex-col lg:flex-row gap-4'>
-    <ProductCard productImg={hp1} productTitle={"Armr Anti Hangover Shot Apple 60ml"} />
-    <ProductCard productImg={hp2} productTitle={"Armr Anti Hangover Shot Apple 60ml"} />
-    <ProductCard productImg={hp3} productTitle={"Armr Anti Hangover Shot Apple 60ml"} />
-    <ProductCard productImg={hp4} productTitle={"Armr Anti Hangover Shot Apple 60ml"} />
-    <ProductCard productImg={hp5} productTitle={"Armr Anti Hangover Shot Apple 60ml"} />
-    <ProductCard productImg={hp6} productTitle={"Armr Anti Hangover Shot Apple 60ml"} />
+    <ProductCard productImg={hp1} productTitle={"Hi Life Organic Period Pads (1X30) 1s"} />
+    <ProductCard productImg={hp2} productTitle={"Life Aveda Aloe Vera Gel 130ml"} />
+    <ProductCard productImg={hp3} productTitle={"Life Aveda Cap Aller Gi Veg (1×60) 1s"} />
+    <ProductCard productImg={hp4} productTitle={"Life Aveda Cap Boswellia Curcumin Veg (1×60) 1s"} />
+    <ProductCard productImg={hp5} productTitle={"Life Aveda Cap Digest Easy Veg (1×60) 1s"} />
+    <ProductCard productImg={hp6} productTitle={"Life Aveda Cap Premium Shatavari Veg (1×60) 1s"} />
     </div>
   )
 }

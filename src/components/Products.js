@@ -284,7 +284,7 @@ const Products = () => {
         <div className="absolute top-0 left-0 w-full h-full opacity-50 bg-gradient-to-b from-[#0084D6] to-black"></div>
         <h2 className=" text-white z-[2]">Our Products</h2>
       </section>
-      <div className="container mx-auto p-40 md:flex-row">
+      <div className="container mx-auto p-4 md:p-10">
         <h1 className="text-4xl font-bold mb-4 text-center text-[#3470a1]">Our Products</h1>
         <Dropdown handleSortChange={handleSortChange}/>
         <br/>

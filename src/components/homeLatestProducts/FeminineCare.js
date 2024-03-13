@@ -10,12 +10,12 @@ import fc6 from "../../assets/images/feminineCareImg/fc6.jpg";
 const FeminineCare = () => {
   return (
     <div className='bg-white p-10 mx-16 flex flex-col lg:flex-row gap-4'>
-    <ProductCard productImg={fc1} productTitle={"Armr Anti Hangover Shot Apple 60ml"} />
-    <ProductCard productImg={fc2} productTitle={"Armr Anti Hangover Shot Apple 60ml"} />
-    <ProductCard productImg={fc3} productTitle={"Armr Anti Hangover Shot Apple 60ml"} />
-    <ProductCard productImg={fc4} productTitle={"Armr Anti Hangover Shot Apple 60ml"} />
-    <ProductCard productImg={fc5} productTitle={"Armr Anti Hangover Shot Apple 60ml"} />
-    <ProductCard productImg={fc6} productTitle={"Armr Anti Hangover Shot Apple 60ml"} />
+    <ProductCard productImg={fc1} productTitle={"Carmesi Disposable Period Panties M-L (1×4) 1s"} />
+    <ProductCard productImg={fc2} productTitle={"Carmesi Facial Razor For Women (1×3) 1s"} />
+    <ProductCard productImg={fc3} productTitle={"Carmesi Panty Liners (1×60) 1s"} />
+    <ProductCard productImg={fc4} productTitle={"Carmesi Sensitive Sanitary Pads Rash Free (1×10) 1s"} />
+    <ProductCard productImg={fc5} productTitle={"Good Vibes Brightening Face Serum Vitamin C 30ml"} />
+    <ProductCard productImg={fc6} productTitle={"Hi Life Intimate Hygiene Spray (480 Spray) 60ml"} />
     </div>
   )
 }

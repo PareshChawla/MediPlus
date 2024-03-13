@@ -19,7 +19,7 @@ const HomeFeaturedp = ({ img, medName, rating }) => {
             )}
 
             <Link to="/upload">
-                <button className="bg-[#6cb250] hover:bg-[#3470a1] text-white py-1.5 px-5 mt-auto">
+                <button className="bg-[#6cb250] hover:bg-[#3470a1] text-white py-1.5 px-5 mt-4">
                     Shop Now
                 </button>
             </Link>

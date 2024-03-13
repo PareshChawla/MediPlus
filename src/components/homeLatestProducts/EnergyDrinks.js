@@ -9,13 +9,13 @@ import ed6 from "../../assets/images/energyDrinkImg/6ed.jpg";
 
 const EnergyDrinks = () => {
   return (
-    <div className='bg-white p-10 mx-16 flex flex-col lg:flex-row gap-4'>
+    <div className='bg-white p-10 mx-16 flex flex-col lg:flex-row gap-4 '>
     <ProductCard productImg={ed1} productTitle={"Armr Anti Hangover Shot Apple 60ml"} />
-    <ProductCard productImg={ed2} productTitle={"Armr Anti Hangover Shot Apple 60ml"} />
-    <ProductCard productImg={ed3} productTitle={"Armr Anti Hangover Shot Apple 60ml"} />
-    <ProductCard productImg={ed4} productTitle={"Armr Anti Hangover Shot Apple 60ml"} />
-    <ProductCard productImg={ed5} productTitle={"Armr Anti Hangover Shot Apple 60ml"} />
-    <ProductCard productImg={ed6} productTitle={"Armr Anti Hangover Shot Apple 60ml"} />
+    <ProductCard productImg={ed2} productTitle={"Armr Anti Hangover Shot Blackberry 60ml"} />
+    <ProductCard productImg={ed3} productTitle={"Armr Daily Detox Shot With Activated Charcoal 60ml"} />
+    <ProductCard productImg={ed4} productTitle={"Armr Lemonick Anti Hangover Shot Lemon 60ml"} />
+    <ProductCard productImg={ed5} productTitle={"Armr Pro Immunity Shot Kadha 2.0 60ml"} />
+    <ProductCard productImg={ed6} productTitle={"Armr Weight Management Shot With Apple Cider Vinegar 60ml"} />
     </div>
   )
 }

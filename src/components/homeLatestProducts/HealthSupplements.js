@@ -11,12 +11,12 @@ import hs6 from "../../assets/images/healthSupplementImg/hs6.jpg";
 const HealthSupplements = () => {
   return (
     <div className='bg-white p-10 mx-16 flex flex-col lg:flex-row gap-4'>
-    <ProductCard productImg={hs1} productTitle={"Armr Anti Hangover Shot Apple 60ml"} />
-    <ProductCard productImg={hs2} productTitle={"Armr Anti Hangover Shot Apple 60ml"} />
-    <ProductCard productImg={hs3} productTitle={"Armr Anti Hangover Shot Apple 60ml"} />
-    <ProductCard productImg={hs4} productTitle={"Armr Anti Hangover Shot Apple 60ml"} />
-    <ProductCard productImg={hs5} productTitle={"Armr Anti Hangover Shot Apple 60ml"} />
-    <ProductCard productImg={hs6} productTitle={"Armr Anti Hangover Shot Apple 60ml"} />
+    <ProductCard productImg={hs1} productTitle={"Genetic Nutrition Bio Whey Powder Chocolate 1Kg"} />
+    <ProductCard productImg={hs2} productTitle={"Genetic Nutrition Bio Whey Powder Chocolate Mega Vit Tab and Shaker Free 2Kg"} />
+    <ProductCard productImg={hs3} productTitle={"Genetic Nutrition Cap Absolute Papaya Extract (1×30) 1s"} />
+    <ProductCard productImg={hs4} productTitle={"Genetic Nutrition Cap CLA (1×60) 1s"} />
+    <ProductCard productImg={hs5} productTitle={"Genetic Nutrition Cap Mega Coenzyme Q10 (1×30) 1s"} />
+    <ProductCard productImg={hs6} productTitle={"Genetic Nutrition Cap Mega Probiotics (1×30) 1s"} />
     </div>
   )
 }

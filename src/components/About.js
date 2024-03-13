@@ -12,7 +12,7 @@ const About = () => {
   }, []);
   return (
     <>
-      <section className="bg-fixed bg-center bg-cover relative grid place-items-center  min-h-[460px] uppercase text-5xl font-bold bg-[url(/src/assets/images/Pharmacist_Behind.jpg)]">
+      <section className="bg-fixed bg-center bg-cover relative grid place-items-center min-h-[460px] uppercase text-5xl font-bold bg-[url(/src/assets/images/Pharmacist_Behind.jpg)]">
         <div
           style={{
             backgroundColor: "transparent",
