@@ -29,7 +29,7 @@ const handlePageChange = (pageNumber) => {
         <button
           className="bg-[#6cb250] hover:bg-blue-700 text-white font-bold py-1.5 px-5 rounded absolute right-48"
           onClick={() => handlePageChange(currentPage + 1)} 
-          disabled={pages.length}
+          disabled={currentPage >= pages.length}
         >
           Next
         </button>
