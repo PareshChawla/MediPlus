@@ -33,7 +33,6 @@ import AllCategories from "./AllCategories";
 import LatestFromOurBlogs from "./LatestFromOurBlogs";
 import FeaturedProducts from "./FeaturedProducts";
 import HomeMedNumAnimate from "./HomeMedNumAnimate";
-
 const PrevArrow = () => {
   return <div className="hidden"></div>;
 };

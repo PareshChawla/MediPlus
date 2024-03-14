@@ -36,6 +36,7 @@ import Health9 from "./components/blogsHealth/Health/Health9";
 import Health10 from "./components/blogsHealth/Health/Health10";
 import Health11 from "./components/blogsHealth/Health/Health11";
 import Health12 from "./components/blogsHealth/Health/Health12";
+import ContactComponent from "./components/ContactComponent";
 
 EmailJS.init("Zeg7ovdqSlwuboR-4");
 
@@ -191,6 +192,7 @@ function App() {
       <Header />
       <Outlet />
       <Footer />
+      <ContactComponent/>
     </>
   );
 }
