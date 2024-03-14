@@ -24,7 +24,6 @@ const Dropdown = ({ handleSortChange }) => {
         <option value="Sort by latest">Sort by latest</option>
         
       </select>
-
     </div>
   );
 };
