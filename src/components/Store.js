@@ -6,7 +6,7 @@ const Store = () => {
   const stores = [
     {
       title: "Store 1",
-      src: "border https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7007.503060875326!2d77.327034!3d28.577223!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5e742b54ee1%3A0x3ff6de5df6370bb4!2sPharmacy%20H%2B!5e0!3m2!1sen!2sin!4v1708684203296!5m2!1sen!2sin",
+      src: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7007.503060875326!2d77.327034!3d28.577223!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5e742b54ee1%3A0x3ff6de5df6370bb4!2sPharmacy%20H%2B!5e0!3m2!1sen!2sin!4v1708684203296!5m2!1sen!2sin",
       logo: Logo,
       address: "In Premises of Indo Gulf Hospital, Sector - 19, Noida - 201301",
       time: "24 Hour Service",
@@ -158,15 +158,8 @@ const Store = () => {
 
       <div className=" p-8 "></div>
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(3, 1fr)",
-          gap: "24px",
-          padding: "4px",
-        }}
-        className=" mx-48"
-      >
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-4 lg:mx-48">
+        
         {stores.map((store, i) => (
           <StoreCard
             key={store.title + i}

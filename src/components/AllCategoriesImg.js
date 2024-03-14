@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
-const AllCategoriesImg = ({ CategoryImg, CategoryText, CategoryBtn }) => {
+const AllCategoriesImg = ({ CategoryImg, CategoryText, CategoryBtn, to }) => {
   const [isHovered, setIsHovered] = useState(false);
   return (
     <div>
@@ -9,11 +10,13 @@ const AllCategoriesImg = ({ CategoryImg, CategoryText, CategoryBtn }) => {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
+        <Link to={to}>
         <img
           className="md:w-[270px] w-[270px] h-48 transition-transform ease-in-out duration-500 transform hover:scale-125 hover:brightness-50 object-cover"
           src={CategoryImg}
           alt="category-img"
         />
+        </Link>
         <p
           className={`text-white absolute text-sm font-bold ${
             isHovered ? "visible" : "invisible"
