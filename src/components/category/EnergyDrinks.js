@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import ProdutsCarousel from "../ProductsCoursel";
 import Dropdown from "../Dropdown";
 import Med1 from "../../assets/images/energyDrinkImg/1ed.jpg";
@@ -13,13 +13,106 @@ import Med9 from "../../assets/images/energyDrinkImg/3ed.jpg";
 import Med10 from "../../assets/images/energyDrinkImg/4ed.jpg";
 import Med11 from "../../assets/images/energyDrinkImg/5ed.jpg";
 import Med12 from "../../assets/images/energyDrinkImg/6ed.jpg";
-//import Pagination from "../Pagination";
+// import Pagination from "../Pagination";
 
+const imageSource = 
+[
+  {
+    src: Med1,
+    name: "Armr Anti Hangover Shot Apple 60ml",
+    price: "12",
+  },
+  {
+    src: Med2,
+    name: "Armr Anti Hangover Shot Blackberry 60ml",
+    price: "4",
+  },
+  {
+    src: Med3,
+    name: "Armr Daily Detox Shot With Activated Charcoal 60ml",
+    price: "24",
+  },
+  {
+    src: Med4,
+    name: "Armr Lemonick Anti Hangover Shot Lemon 60ml",
+    price: "32",
+  },
+  {
+    src: Med5,
+    name: "Armr Pro Immunity Shot Kadha 2.0 60ml",
+    price: "15",
+  },
+  {
+    src: Med6,
+    name: "Armr Weight Management Shot With Apple Cider Vinegar 60ml",
+    price: "18",
+  },
+  {
+    src: Med7,
+    name: "Armr Anti Hangover Shot Apple 60ml",
+    price: "24",
+  },
+  {
+    src: Med8,
+    name: "Armr Anti Hangover Shot Blackberry 60ml",
+    price: "67",
+  },
+  {
+    src: Med9,
+    name: "Armr Daily Detox Shot With Activated Charcoal 60ml",
+    price: "15",
+  },
+  {
+    src: Med10,
+    name: "Armr Lemonick Anti Hangover Shot Lemon 60ml",
+    price: "8",
+  },
+  {
+    src: Med11,
+    name: "Armr Pro Immunity Shot Kadha 2.0 60ml",
+    price: "11",
+  },
+  {
+    src: Med12,
+    name: "Armr Weight Management Shot With Apple Cider Vinegar 60ml",
+    price: "7",
+  },
+]
 
 const EnergyDrinks = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  // eslint-disable-next-line
+  const [currentPage, setCurrentPage] = useState(1);
+  // eslint-disable-next-line
+  const [postsPerPage, setPostsPerPage] = useState(12);
+
+  const [selectedOption, setSelectedOption] = useState("Default sorting");
+
+  const handleSortChange = (selectedValue) => {
+    setSelectedOption(selectedValue);
+  };
+
+
+  if (selectedOption === "Sort by price: low to high") {
+    imageSource.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
+  } else if (selectedOption === "Sort by price: high to low") {
+    imageSource.sort((a, b) => parseFloat(b.price) - parseFloat(a.price));
+  } else{
+    
+  }
+
+  let pages = [];
+
+  for (let i = 1; i <= Math.ceil(imageSource?.length / postsPerPage); i++) {
+    pages.push(i);
+  }
+  const lastPostIndex = postsPerPage * currentPage
+  const firstPostIndex = lastPostIndex - postsPerPage
+  const currentPost = imageSource?.slice(firstPostIndex, lastPostIndex)
+  console.log(currentPage)
   return (
     <>
       <section className="bg-fixed relative grid place-items-center h-96 uppercase text-5xl font-bold bg-[url(/src/assets/images/medicine2.webp)]">
@@ -29,85 +122,25 @@ const EnergyDrinks = () => {
       
       <div className="container mx-auto p-40 md:flex-row">
         {/* <h1 className="text-4xl font-bold mb-4 text-center text-[#3470a1]">Health Supplements</h1> */}
-        <Dropdown/>
+        <Dropdown handleSortChange={handleSortChange}/>
       <br/>
       <br/>
       <br/>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          <ProdutsCarousel
-            img={Med1}
-            medName={"Armr Anti Hangover Shot Apple 60ml"}
+        {currentPost.map((energyDrink, index) => {
+          return (
+            <ProdutsCarousel
+            key={index}
+            img={energyDrink.src}
+            medName={energyDrink.name}
             // medDetails={"10s Form-Tab"}
-            price={"12$"}
+            price={energyDrink.price}
           />
-          <ProdutsCarousel
-            img={Med2}
-            medName={"Armr Anti Hangover Shot Blackberry 60ml"}
-            // medDetails={"10s Form-Syrup"}
-            price={"12$"}
-          />
-          <ProdutsCarousel
-            img={Med3}
-            medName={"Armr Daily Detox Shot With Activated Charcoal 60ml"}
-            // medDetails={"10s Form-Gel"}
-            price={"12$"}
-          />
-          <ProdutsCarousel
-            img={Med4}
-            medName={"Armr Lemonick Anti Hangover Shot Lemon 60ml"}
-            // medDetails={"10s Form-Capsule"}
-            price={"12$"}
-          />
-          <ProdutsCarousel
-            img={Med5}
-            medName={"Armr Pro Immunity Shot Kadha 2.0 60ml"}
-            // medDetails={"10s Form-Tab"}
-            price={"12$"}
-          />
-          <ProdutsCarousel
-            img={Med6}
-            medName={"Armr Weight Management Shot With Apple Cider Vinegar 60ml"}
-            // medDetails={"10s Form-Capsule"}
-            price={"12$"}
-          />
-          <ProdutsCarousel
-            img={Med7}
-            medName={"Armr Anti Hangover Shot Apple 60ml"}
-            // medDetails={"10s Form-Capsule"}
-            price={"12$"}
-          />
-          <ProdutsCarousel
-            img={Med8}
-            medName={"Armr Anti Hangover Shot Blackberry 60ml"}
-            // medDetails={"10s Form-Syrup"}
-            price={"12$"}
-          />
-          <ProdutsCarousel
-            img={Med9}
-            medName={"Armr Daily Detox Shot With Activated Charcoal 60ml"}
-            // medDetails={"10s Form-Capsule"}
-            price={"12$"}
-          />
-          <ProdutsCarousel
-            img={Med10}
-            medName={"Armr Lemonick Anti Hangover Shot Lemon 60ml"}
-            // medDetails={"10s Form-Powder"}
-            price={"12$"}
-          />
-          <ProdutsCarousel
-            img={Med11}
-            medName={"Armr Pro Immunity Shot Kadha 2.0 60ml"}
-            // medDetails={"10s Form-Tab"}
-            price={"12$"}
-          />
-          <ProdutsCarousel
-            img={Med12}
-            medName={"Armr Weight Management Shot With Apple Cider Vinegar 60ml"}
-            // medDetails={"10s Form-Serum"}
-            price={"12$"}
-          />
+          )
+        })}
+
         </div>
-        {/* <Pagination/> */}
+        {/* <Pagination currentPage={currentPage} setCurrentPage={setCurrentPage} pages={pages} /> */}
       </div>
     </>
   );
