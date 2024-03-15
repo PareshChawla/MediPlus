@@ -37,6 +37,7 @@ import Health10 from "./components/blogsHealth/Health/Health10";
 import Health11 from "./components/blogsHealth/Health/Health11";
 import Health12 from "./components/blogsHealth/Health/Health12";
 import ContactComponent from "./components/ContactComponent";
+import Search from "./components/Search";
 
 EmailJS.init("Zeg7ovdqSlwuboR-4");
 
@@ -180,6 +181,10 @@ export const appRouter = createBrowserRouter([
       {
         path: "/health12",
         element: <Health12/>,
+      },
+      {
+        path: "/search",
+        element: <Search/>,
       },
       
     ],

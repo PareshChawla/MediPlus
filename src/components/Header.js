@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import logo from "../assets/images/medplusLogo.webp";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { RiSearchLine } from "react-icons/ri";
 import { BiLogoFacebookCircle } from "react-icons/bi";
 import { FaSquareXTwitter } from "react-icons/fa6";
@@ -15,6 +15,18 @@ const Header = () => {
   const [searchVisible, setSearchVisible] = useState(false);
   const searchRef = useRef(null);
 
+  const navigate = useNavigate();
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    const searchQuery = e.target.elements.search?.value;
+    if (searchQuery) {
+      console.log("Search query:", searchQuery);
+      navigate(`/search?search=${searchQuery}`);
+      setSearchVisible(false);
+    }
+  };
+
   const handleMenuClick = () => {
     setMenu(true);
   };
@@ -23,14 +35,16 @@ const Header = () => {
     setMenu(false);
   };
 
-  const handleSearchClick = () => {
+  const handleSearchClick = (e) => {
     setSearchVisible(!searchVisible);
+    e.stopPropagation();
   };
 
   useEffect(() => {
     function handleClickOutside(event) {
-      if (searchRef.current && !searchRef.current.contains(event.target)) {
-        setSearchVisible(false);
+      if (searchVisible) {
+        setSearchVisible(!searchVisible);
+        console.log(searchVisible);
       }
     }
 
@@ -38,8 +52,7 @@ const Header = () => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [searchRef]);
-
+  }, [searchVisible]);
 
   return (
     <>
@@ -49,34 +62,6 @@ const Header = () => {
             <img className="h-12 mt-2 md:h-14 md:mt-4" src={logo} alt="logo" />
           </Link>
         </div>
-        <form
-          ref={searchRef}
-          role="search"
-          method="get"
-          className={`relative ${searchVisible ? 'block' : 'hidden'}`}
-          action="https://www.pharmville.in/"
-        >
-          <input
-            type="search"
-            className="modal-field appearance-none border border-gray-300 rounded-lg py-2 px-4 block w-full leading-normal focus:outline-none focus:border-blue-500"
-            placeholder="Search"
-            name="s"
-            autoComplete="off"
-            title="Search for..."
-            aria-label="Search for..."
-          />
-          <div className="absolute inset-y-0 right-0 flex items-center pr-3">
-            <button
-              type="submit"
-              className="inline-flex items-center justify-center bg-blue-500 text-white rounded-full h-10 w-10 p-2 focus:outline-none focus:bg-blue-600"
-              aria-label="Search button"
-              onClick={() => setSearchVisible(false)}
-            >
-              <RiSearchLine size={20} />
-            </button>
-          </div>
-          <input type="hidden" name="post_type" value="product" />
-        </form>
 
         <ul className="hidden lg:flex gap-8 font-semibold mr-20 text-sm cursor-pointer">
           <Link to="/">
@@ -98,35 +83,40 @@ const Header = () => {
             <li className="hover:text-blue-400">CONTACT US</li>
           </Link>
         </ul>
-        <Link to="/upload">
-          <h1 className="hidden md:block font-semibold text-red-500 mr-10 hover:text-green-500 cursor-pointer">
+        <Link className="hidden md:block" to="/upload">
+          <h1 className="font-semibold text-red-500 mr-10 hover:text-green-500 cursor-pointer">
             Upload Prescription
           </h1>
         </Link>
-        <div className="hidden md:flex gap-5 mr-5 cursor-pointer">
-          <div className="mr-3" onClick={handleSearchClick}>
+        <div className="flex gap-5 mr-5">
+          <div
+            className="mr-3 cursor-pointer"
+            onClick={(e) => handleSearchClick(e)}
+          >
             <RiSearchLine size={20} />
           </div>
-          <BiLogoFacebookCircle
-            size={18}
-            className="hover:text-green-400 cursor-pointer"
-          />
-          <FaSquareXTwitter
-            size={18}
-            className="hover:text-green-400 cursor-pointer"
-          />
-          <BiLogoInstagramAlt
-            size={18}
-            className="hover:text-green-400 cursor-pointer"
-          />
-          <BiLogoLinkedinSquare
-            size={18}
-            className="hover:text-green-400 cursor-pointer"
-          />
-          <BiLogoYoutube
-            size={18}
-            className="hover:text-green-400 cursor-pointer"
-          />
+          <div className="gap-5 hidden md:flex">
+            <BiLogoFacebookCircle
+              size={18}
+              className="hover:text-green-400 cursor-pointer"
+            />
+            <FaSquareXTwitter
+              size={18}
+              className="hover:text-green-400 cursor-pointer"
+            />
+            <BiLogoInstagramAlt
+              size={18}
+              className="hover:text-green-400 cursor-pointer"
+            />
+            <BiLogoLinkedinSquare
+              size={18}
+              className="hover:text-green-400 cursor-pointer"
+            />
+            <BiLogoYoutube
+              size={18}
+              className="hover:text-green-400 cursor-pointer"
+            />
+          </div>
         </div>
         <div
           className="lg:hidden flex bg-gray-200 rounded-sm items-center gap-2 m-2 p-2 cursor-pointer"
@@ -151,10 +141,7 @@ const Header = () => {
             <Link className="border-t-2 border-gray-700 w-full" to="/about">
               <h1 className="hover:text-green-500 py-2 w-full">About Us</h1>
             </Link>
-            <Link
-              className="border-t-2 border-gray-700 w-full"
-              to="/products"
-            >
+            <Link className="border-t-2 border-gray-700 w-full" to="/products">
               <h1 className="hover:text-green-500 py-2 w-full">Products</h1>
             </Link>
             <Link className="border-t-2 border-gray-700 w-full" to="/stores">
@@ -172,6 +159,36 @@ const Header = () => {
           </div>
         </div>
       )}
+      {searchVisible ? (
+        <form
+          ref={searchRef}
+          role="search"
+          method="get"
+          className="relative"
+          onSubmit={handleSearchSubmit}
+        >
+          <input
+            type="search"
+            className="modal-field appearance-none border border-gray-300 rounded-lg py-2 px-4 block w-full leading-normal focus:outline-none focus:border-blue-500"
+            placeholder="Search"
+            name="search"
+            autoComplete="off"
+            title="Search for..."
+            aria-label="Search for..."
+          />
+          <div className="absolute inset-y-0 right-0 flex items-center pr-3">
+            <button
+              type="submit"
+              className="inline-flex items-center justify-center bg-blue-500 text-white rounded-full h-8 w-8 p-2 focus:outline-none focus:bg-blue-600"
+              aria-label="Search button"
+              onClick={() => setSearchVisible(false)}
+            >
+              <RiSearchLine size={20} />
+            </button>
+          </div>
+          <input type="hidden" name="post_type" value="product" />
+        </form>
+      ) : null}
     </>
   );
 };
