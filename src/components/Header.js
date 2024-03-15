@@ -35,16 +35,14 @@ const Header = () => {
     setMenu(false);
   };
 
-  const handleSearchClick = (e) => {
+  const handleSearchClick = () => {
     setSearchVisible(!searchVisible);
-    e.stopPropagation();
   };
 
   useEffect(() => {
     function handleClickOutside(event) {
-      if (searchVisible) {
-        setSearchVisible(!searchVisible);
-        console.log(searchVisible);
+      if (searchRef.current && !searchRef.current.contains(event.target)) {
+        setSearchVisible(false);
       }
     }
 
@@ -52,7 +50,7 @@ const Header = () => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [searchVisible]);
+  }, [searchRef]);
 
   return (
     <>
@@ -89,10 +87,7 @@ const Header = () => {
           </h1>
         </Link>
         <div className="flex gap-5 mr-5">
-          <div
-            className="mr-3 cursor-pointer"
-            onClick={(e) => handleSearchClick(e)}
-          >
+          <div className="mr-3 cursor-pointer" onClick={handleSearchClick}>
             <RiSearchLine size={20} />
           </div>
           <div className="gap-5 hidden md:flex">
@@ -159,36 +154,35 @@ const Header = () => {
           </div>
         </div>
       )}
-      {searchVisible ? (
-        <form
-          ref={searchRef}
-          role="search"
-          method="get"
-          className="relative"
-          onSubmit={handleSearchSubmit}
-        >
-          <input
-            type="search"
-            className="modal-field appearance-none border border-gray-300 rounded-lg py-2 px-4 block w-full leading-normal focus:outline-none focus:border-blue-500"
-            placeholder="Search"
-            name="search"
-            autoComplete="off"
-            title="Search for..."
-            aria-label="Search for..."
-          />
-          <div className="absolute inset-y-0 right-0 flex items-center pr-3">
-            <button
-              type="submit"
-              className="inline-flex items-center justify-center bg-blue-500 text-white rounded-full h-8 w-8 p-2 focus:outline-none focus:bg-blue-600"
-              aria-label="Search button"
-              onClick={() => setSearchVisible(false)}
-            >
-              <RiSearchLine size={20} />
-            </button>
-          </div>
-          <input type="hidden" name="post_type" value="product" />
-        </form>
-      ) : null}
+      {searchVisible}
+      <form
+        ref={searchRef}
+        role="search"
+        method="get"
+        className={`relative ${searchVisible ? "block" : "hidden"}`}
+        onSubmit={handleSearchSubmit}
+      >
+        <input
+          type="search"
+          className="modal-field appearance-none border border-gray-300 rounded-lg py-2 px-4 block w-full leading-normal focus:outline-none focus:border-blue-500"
+          placeholder="Search"
+          name="search"
+          autoComplete="off"
+          title="Search for..."
+          aria-label="Search for..."
+        />
+        <div className="absolute inset-y-0 right-0 flex items-center pr-3">
+          <button
+            type="submit"
+            className="inline-flex items-center justify-center bg-blue-500 text-white rounded-full h-8 w-8 p-2 focus:outline-none focus:bg-blue-600"
+            aria-label="Search button"
+            onClick={() => setSearchVisible(false)}
+          >
+            <RiSearchLine size={20} />
+          </button>
+        </div>
+        <input type="hidden" name="post_type" value="product" />
+      </form>
     </>
   );
 };

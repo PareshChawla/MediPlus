@@ -17,7 +17,7 @@ const ContactComponent = () => {
       <span className="bg-[#3470A1] w-full h-[50px] flex flex-col items-center rounded-es-lg">
         <a
           className="text-center flex flex-col items-center"
-          href="tel:123-456-7890"
+          href="tel:782-773-8719"
           title="10am to 7pm"
         >
           <AiFillPhone color="white" size={18} />
