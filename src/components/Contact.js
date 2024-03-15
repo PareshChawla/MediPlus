@@ -3,6 +3,7 @@ import ContactCard from './ContactCard';
 import { FaLocationDot } from 'react-icons/fa6';
 import { HiOutlineMailOpen } from 'react-icons/hi';
 import { FaPhoneAlt } from 'react-icons/fa';
+import Flag from "../assets/images/flag.png";
 import ContactUsImg from '../assets/images/Contact2.jpg';
 
 const Contact = () => {
@@ -65,8 +66,8 @@ const Contact = () => {
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label htmlFor="name" className="block mb-1">
-                Name *
+              <label htmlFor="name" className="block mt-3">
+                Name<span className="text-red-500">*</span>
               </label>
               <input
                 type="text"
@@ -78,8 +79,8 @@ const Contact = () => {
               {nameError && <p className="text-red-500 mt-1">{nameError}</p>}
             </div>
             <div>
-              <label htmlFor="email" className="block mb-1">
-                Email Address *
+              <label htmlFor="email" className="block mt-3">
+                Email Address<span className="text-red-500">*</span>
               </label>
               <input
                 type="email"
@@ -90,17 +91,21 @@ const Contact = () => {
               />
               {emailError && <p className="text-red-500 mt-1">{emailError}</p>}
             </div>
-            <div>
-              <label htmlFor="mobile" className="block mb-1">
-                Mobile Number *
+            <div className='relative'>
+              <label htmlFor="mobile" className="block mt-3 text-sm">
+                Mobile Number<span className="text-red-500">*</span>
               </label>
               <input
                 type="tel"
                 id="mobile"
                 value={mobile}
+                placeholder='+91'
                 onChange={(e) => setMobile(e.target.value)}
                 className={`w-full p-2 border-gray-300 rounded-md shadow-sm ${mobileError ? 'border-red-500' : ''}`}
               />
+              <div className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
+                  <img src={Flag} alt="Indian Flag" className="w-6 h-6 mt-4" />
+                </div>
               {mobileError && <p className="text-red-500 mt-1">{mobileError}</p>}
             </div>
             <div>
