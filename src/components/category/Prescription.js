@@ -12,22 +12,20 @@ import Med9 from "../../assets/images/G9.jpg";
 import Med10 from "../../assets/images/G10.jpg";
 import Med11 from "../../assets/images/G11.jpg";
 import Med12 from "../../assets/images/G12.jpeg";
-//import Pagination from "../Pagination";
-
 
 const Prescription = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   return (
     <>
       <section className="bg-fixed relative grid place-items-center h-96 uppercase text-5xl font-bold bg-[url(/src/assets/images/medicine2.webp)]">
         <div className="absolute top-0 left-0 w-full h-full opacity-50 bg-gradient-to-b from-[#0084D6] to-black"></div>
-        <h2 className=" text-white z-[2]">Prescription</h2>
+        <h2 className="text-white z-[2]">Prescription</h2>
       </section>
-      <div className="container mx-auto p-40 md:flex-row">
-        {/* <h1 className="text-4xl font-bold mb-4 text-center text-[#3470a1]">Prescription</h1> */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div className="container mx-auto p-6 md:p-12 lg:p-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
           <ProdutsCarousel
             img={Med1}
             medName={"A to Z Gold Cap"}
@@ -101,7 +99,6 @@ const Prescription = () => {
             price={"12$"}
           />
         </div>
-        {/* <Pagination/> */}
       </div>
     </>
   );

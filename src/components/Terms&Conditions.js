@@ -17,12 +17,12 @@ const Terms = () => {
           }}
           className="absolute top-0 left-0 w-full h-full opacity-50 "
         ></div>
-        <h1 className=" text-white z-[2] text-[40px]">
+        <h1 className=" text-white z-[2] text-[40px] text-center">
         TERMS & CONDITIONS
         </h1>
     </section>
     <div>
-      <h1 className=" text-black z-[2] text-[40px] relative grid place-items-center pt-10 pb-16">
+      <h1 className=" text-black z-[2] text-[40px] relative grid place-items-center pt-10 pb-16 text-center">
           TERMS AND CONDITIONS
         </h1>
       </div>

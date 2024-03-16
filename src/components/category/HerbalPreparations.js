@@ -15,8 +15,7 @@ import Med11 from "../../assets/images/healthSupplementImg/hs5.jpg";
 import Med12 from "../../assets/images/healthSupplementImg/hs6.jpg";
 //import Pagination from "../Pagination";
 
-const imageSource = 
-[
+const imageSource = [
   {
     src: Med1,
     name: "Genetic Nutrition Bio Whey Powder Chocolate 1Kg",
@@ -70,75 +69,63 @@ const imageSource =
   {
     src: Med11,
     name: "Genetic Nutrition Cap Mega Coenzyme Q10 (1×30) 1s",
-    price: "!6$",
+    price: "16$",
   },
   {
     src: Med12,
     name: "Genetic Nutrition Cap Mega Probiotics (1×30) 1s",
     price: "20$",
   },
-]
+];
 
 const HerbalPreparations = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  // eslint-disable-next-line
   const [currentPage, setCurrentPage] = useState(1);
-  // eslint-disable-next-line
   const [postsPerPage, setPostsPerPage] = useState(12);
-
   const [selectedOption, setSelectedOption] = useState("Default sorting");
 
   const handleSortChange = (selectedValue) => {
     setSelectedOption(selectedValue);
   };
 
-
   if (selectedOption === "Sort by price: low to high") {
     imageSource.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
   } else if (selectedOption === "Sort by price: high to low") {
     imageSource.sort((a, b) => parseFloat(b.price) - parseFloat(a.price));
-  } else{
-    
   }
 
-  let pages = [];
+  const pages = [];
 
   for (let i = 1; i <= Math.ceil(imageSource?.length / postsPerPage); i++) {
     pages.push(i);
   }
-  const lastPostIndex = postsPerPage * currentPage
-  const firstPostIndex = lastPostIndex - postsPerPage
-  const currentPost = imageSource?.slice(firstPostIndex, lastPostIndex)
-  console.log(currentPage)
+
+  const lastPostIndex = postsPerPage * currentPage;
+  const firstPostIndex = lastPostIndex - postsPerPage;
+  const currentPost = imageSource?.slice(firstPostIndex, lastPostIndex);
+
   return (
     <>
       <section className="bg-fixed relative grid place-items-center h-96 uppercase text-5xl font-bold bg-[url(/src/assets/images/medicine2.webp)]">
         <div className="absolute top-0 left-0 w-full h-full opacity-50 bg-gradient-to-b from-[#0084D6] to-black"></div>
-        <h2 className=" text-white z-[2]">HerbalPreparations</h2>
+        <h2 className="text-white z-[2] text-center">HerbalPreparations</h2>
       </section>
-      <div className="container mx-auto p-40 md:flex-row">
-        {/* <h1 className="text-4xl font-bold mb-4 text-center text-[#3470a1]">Health Supplements</h1> */}
-      <Dropdown handleSortChange={handleSortChange}/>
-      <br/>
-      <br/>
-      <br/>
+      <div className="container mx-auto p-6 md:p-12 lg:p-20">
+        <Dropdown handleSortChange={handleSortChange} />
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {currentPost.map((herbalPreparation, index) => {
-          return(
-          <ProdutsCarousel
-            key={index}
-            img={herbalPreparation.src}
-            medName={herbalPreparation.name}
-            // medDetails={"10s Form-Tab"}
-            price={herbalPreparation.price}
-          />
-          )
-        })}
+          {currentPost.map((herbalPreparation, index) => (
+            <ProdutsCarousel
+              key={index}
+              img={herbalPreparation.src}
+              medName={herbalPreparation.name}
+              price={herbalPreparation.price}
+            />
+          ))}
         </div>
-        {/* <Pagination/> */}
+        {/* Pagination */}
       </div>
     </>
   );

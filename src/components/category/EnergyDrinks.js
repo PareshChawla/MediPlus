@@ -15,8 +15,7 @@ import Med11 from "../../assets/images/energyDrinkImg/5ed.jpg";
 import Med12 from "../../assets/images/energyDrinkImg/6ed.jpg";
 // import Pagination from "../Pagination";
 
-const imageSource = 
-[
+const imageSource = [
   {
     src: Med1,
     name: "Armr Anti Hangover Shot Apple 60ml",
@@ -77,68 +76,52 @@ const imageSource =
     name: "Armr Weight Management Shot With Apple Cider Vinegar 60ml",
     price: "7",
   },
-]
+];
 
 const EnergyDrinks = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  // eslint-disable-next-line
   const [currentPage, setCurrentPage] = useState(1);
-  // eslint-disable-next-line
   const [postsPerPage, setPostsPerPage] = useState(12);
-
   const [selectedOption, setSelectedOption] = useState("Default sorting");
 
   const handleSortChange = (selectedValue) => {
     setSelectedOption(selectedValue);
   };
 
-
   if (selectedOption === "Sort by price: low to high") {
     imageSource.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
   } else if (selectedOption === "Sort by price: high to low") {
     imageSource.sort((a, b) => parseFloat(b.price) - parseFloat(a.price));
-  } else{
-    
   }
 
-  let pages = [];
+  const lastPostIndex = postsPerPage * currentPage;
+  const firstPostIndex = lastPostIndex - postsPerPage;
+  const currentPost = imageSource?.slice(firstPostIndex, lastPostIndex);
 
-  for (let i = 1; i <= Math.ceil(imageSource?.length / postsPerPage); i++) {
-    pages.push(i);
-  }
-  const lastPostIndex = postsPerPage * currentPage
-  const firstPostIndex = lastPostIndex - postsPerPage
-  const currentPost = imageSource?.slice(firstPostIndex, lastPostIndex)
-  console.log(currentPage)
   return (
     <>
       <section className="bg-fixed relative grid place-items-center h-96 uppercase text-5xl font-bold bg-[url(/src/assets/images/medicine2.webp)]">
         <div className="absolute top-0 left-0 w-full h-full opacity-50 bg-gradient-to-b from-[#0084D6] to-black"></div>
-        <h2 className=" text-white z-[2]">EnergyDrinks</h2>
+        <h2 className="text-white z-[2]">EnergyDrinks</h2>
       </section>
       
-      <div className="container mx-auto p-40 md:flex-row">
-        {/* <h1 className="text-4xl font-bold mb-4 text-center text-[#3470a1]">Health Supplements</h1> */}
+      <div className="container mx-auto p-6 md:p-12 lg:p-20 md:flex-row">
         <Dropdown handleSortChange={handleSortChange}/>
-      <br/>
-      <br/>
-      <br/>
+        <br/>
+        <br/>
+        <br/>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {currentPost.map((energyDrink, index) => {
-          return (
+          {currentPost.map((energyDrink, index) => (
             <ProdutsCarousel
-            key={index}
-            img={energyDrink.src}
-            medName={energyDrink.name}
-            // medDetails={"10s Form-Tab"}
-            price={energyDrink.price}
-          />
-          )
-        })}
-
+              key={index}
+              img={energyDrink.src}
+              medName={energyDrink.name}
+              price={energyDrink.price}
+            />
+          ))}
         </div>
         {/* <Pagination currentPage={currentPage} setCurrentPage={setCurrentPage} pages={pages} /> */}
       </div>

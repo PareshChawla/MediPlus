@@ -8,6 +8,22 @@ const FAQComponent = () => {
   };
 
   return (
+    <>
+      <section className="bg-fixed bg-center bg-cover relative grid place-items-center  min-h-[460px] uppercase text-5xl font-bold bg-[url(/src/assets/images/faqimg.webp)]">
+        <div
+          style={{
+            backgroundColor: "transparent",
+            backgroundImage:
+              "linear-gradient(180deg, #997878 -50%, #000000 100%)",
+            opacity: 0.49,
+            transition: "background 0.3s, border-radius 0.3s, opacity 0.3s",
+          }}
+          className="absolute top-0 left-0 w-full h-full opacity-50 "
+        ></div>
+        <h1 className=" text-white z-[2] text-[30px] text-center">
+        FAQs<br></br>Frequently Asked Questions
+        </h1>
+      </section>
     <div className="bg-white text-[#434F58] text-center font-serif">
       <p className="text-5xl my-8">Frequently Asked Questions</p>
       <div className="max-w-2xl mx-auto">
@@ -30,6 +46,7 @@ const FAQComponent = () => {
         ))}
       </div>
     </div>
+    </>
   );
 };
 
