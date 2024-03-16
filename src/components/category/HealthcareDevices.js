@@ -14,7 +14,7 @@ const HealthcareDevices = () => {
     <>
       <section className="bg-fixed relative grid place-items-center h-96 uppercase text-5xl font-bold bg-[url(/src/assets/images/blog_img.jpg)]">
         <div className="absolute top-0 left-0 w-full h-full opacity-50 "></div>
-        <h2 className="text-white z-[2] text-center">HealthcareDevices</h2>
+        <h2 className="text-white z-[2] text-center">Healthcare Devices</h2>
       </section>
       <div className="container mx-auto p-6 md:p-12 lg:p-20">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
