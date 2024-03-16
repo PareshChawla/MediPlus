@@ -83,7 +83,9 @@ const HerbalPreparations = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  // eslint-disable-next-line
   const [currentPage, setCurrentPage] = useState(1);
+  // eslint-disable-next-line
   const [postsPerPage, setPostsPerPage] = useState(12);
   const [selectedOption, setSelectedOption] = useState("Default sorting");
 
@@ -115,6 +117,8 @@ const HerbalPreparations = () => {
       </section>
       <div className="container mx-auto p-6 md:p-12 lg:p-20">
         <Dropdown handleSortChange={handleSortChange} />
+        <br/>
+        <br/>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {currentPost.map((herbalPreparation, index) => (
             <ProdutsCarousel

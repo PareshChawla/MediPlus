@@ -83,7 +83,9 @@ const EnergyDrinks = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  // eslint-disable-next-line
   const [currentPage, setCurrentPage] = useState(1);
+  // eslint-disable-next-line
   const [postsPerPage, setPostsPerPage] = useState(12);
   const [selectedOption, setSelectedOption] = useState("Default sorting");
 
