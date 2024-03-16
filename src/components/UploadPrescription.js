@@ -6,10 +6,10 @@ import QRCode from "qrcode.react";
 import axios from "axios";
 
 const UploadPrescription = () => {
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   const qrData = "https://web.whatsapp.com/";
   const cities = ["Mumbai", "Pune", "Noida", "Kolkata", "Delhi"];
 
@@ -20,23 +20,21 @@ const UploadPrescription = () => {
     city: "",
     address: "",
     medicine_name: "",
-    prescription: null, // Initialize to null for file upload
+    prescription: null,
     definition: "",
   });
 
   const handleChange = (event) => {
     const { name, value, files } = event.target;
-    // Changed Handling file upload - by Thouseef (Remove this comment after reviewing)
     setFormData({
       ...formData,
       [name]: name === "prescription" ? files[0] : value,
-    }); // Handle file upload
+    });
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    // changes formData variable name to sendFormData to avoid conflict of formData's and formData object - changed by Thouseef (Remove this comment after reviewing)
-    const sendFormData = new FormData(); // Create FormData object for file upload
+    const sendFormData = new FormData();
     for (const key in formData) {
       sendFormData.append(key, formData[key]);
     }
@@ -46,14 +44,12 @@ const UploadPrescription = () => {
         formData,
         {
           headers: {
-            "Content-Type": "multipart/form-data", // Set content type for file upload
+            "Content-Type": "multipart/form-data",
           },
         }
       );
-      // Handle successful response (e.g., display success message)
       console.log("Data submitted successfully:", response.data);
       setFormData({
-        // Clear form data after successful submission
         name: "",
         email: "",
         phone: "",
@@ -66,74 +62,54 @@ const UploadPrescription = () => {
       window.location.reload();
     } catch (error) {
       console.error("Error submitting data:", error);
-      // Handle errors (e.g., display error message)
     }
   };
 
   return (
-    <div className="  bg-cover aspect-auto p-5 lg:px-20  ">
-      <div className="flex h-900  p-5  ">
-        <div className="w-6/12 bg-cover aspect-auto  lg:px-20">
-          <h1 className="text-2xl font-bold mb-4 text-[#3470a1] mt-1">
+    <div className="bg-cover aspect-auto p-3 lg:p-5">
+      <div className="flex flex-col lg:flex-row h-auto p-3 lg:p-5">
+        <div className="w-full lg:w-6/12 bg-cover aspect-auto lg:px-5">
+          <h1 className="text-xl lg:text-2xl font-bold mb-2 lg:mb-4 text-[#3470a1] mt-1">
             UPLOAD THE PRESCRIPTION
           </h1>
           <img
-            className="w-full  h-fit aspect-auto"
+            className="w-full h-auto"
             src={ContactUsImg}
             alt="Contact us"
           />
-          <ul className="mt-6">
-            <li className="flex items-center mt-4">
-              <FaHandHoldingHeart
-                className="inline-block mr-2"
-                color="#6CB250"
-              />
+          <ul className="mt-3 lg:mt-6">
+            <li className="flex items-center mt-2 lg:mt-4">
+              <FaHandHoldingHeart className="inline-block mr-1 lg:mr-2" color="#6CB250" />
               Cheap Real Medicine Available Online.
             </li>
-            <li className="flex items-center mt-4">
-              <FaHandHoldingHeart
-                className="inline-block mr-2"
-                color="#6CB250"
-              />
+            <li className="flex items-center mt-2 lg:mt-4">
+              <FaHandHoldingHeart className="inline-block mr-1 lg:mr-2" color="#6CB250" />
               Upload a valid prescription for our experts to look over.
             </li>
-            <li className="flex items-center mt-4">
-              <FaHandHoldingHeart
-                className="inline-block mr-2"
-                color="#6CB250"
-              />
+            <li className="flex items-center mt-2 lg:mt-4">
+              <FaHandHoldingHeart className="inline-block mr-1 lg:mr-2" color="#6CB250" />
               Save up to 20% on prescription drugs.
             </li>
-            <li className="flex items-center mt-4">
-              <FaHandHoldingHeart
-                className="inline-block mr-2"
-                color="#6CB250"
-              />
+            <li className="flex items-center mt-2 lg:mt-4">
+              <FaHandHoldingHeart className="inline-block mr-1 lg:mr-2" color="#6CB250" />
               Obtain a home delivery of your medications.
             </li>
-            <li className="flex items-center mt-4">
-              <FaHandHoldingHeart
-                className="inline-block mr-2"
-                color="#6CB250"
-              />
+            <li className="flex items-center mt-2 lg:mt-4">
+              <FaHandHoldingHeart className="inline-block mr-1 lg:mr-2" color="#6CB250" />
               Do you have any inquiries? Consult our specialists at no cost.
             </li>
-            <li className="flex items-center mt-4">
-              <FaHandHoldingHeart
-                className="inline-block mr-2"
-                color="#6CB250"
-              />
+            <li className="flex items-center mt-2 lg:mt-4">
+              <FaHandHoldingHeart className="inline-block mr-1 lg:mr-2" color="#6CB250" />
               Mediplus Pharmacy will help you stay healthy.
             </li>
           </ul>
-          <div className="mt-5">
-            {/* Render the QR code component */}
-            <QRCode value={qrData} size={150} />
+          <div className="mt-3 lg:mt-5">
+            <QRCode value={qrData} size={267} />
           </div>
         </div>
 
-        <div className="w-1/2 ">
-          <form id="contactForm" className="mt-0" onSubmit={handleSubmit}>
+        <div className="w-full lg:w-6/12 mt-5 lg:mt-0">
+          <form id="contactForm" onSubmit={handleSubmit}>
             <div>
               <label
                 htmlFor="name"
@@ -143,7 +119,8 @@ const UploadPrescription = () => {
               </label>
               <input
                 onChange={handleChange}
-                className="w-full p-2 bg-gray-20 border border-gray-300 text-gray-900 text-sm  focus:ring-teal-500 focus:border-teal-500 block w-full p-2.5 dark:bg-gray-200 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-teal-500 dark:focus:border-teal-500"
+                value={formData.name}
+                className="bg-gray-20 border border-gray-300 text-gray-900 text-sm focus:ring-teal-500 focus:border-teal-500 block w-full p-2.5 dark:bg-gray-200 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-teal-500 dark:focus:border-teal-500"
                 type="text"
                 id="name"
                 name="name"
@@ -161,7 +138,8 @@ const UploadPrescription = () => {
               </label>
               <input
                 onChange={handleChange}
-                className="w-full p-2 bg-gray-20 border border-gray-300 text-gray-900 text-sm  focus:ring-teal-500 focus:border-teal-500 block w-full p-2.5 dark:bg-gray-200 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-teal-500 dark:focus:border-teal-500"
+                value={formData.email}
+                className="bg-gray-20 border border-gray-300 text-gray-900 text-sm focus:ring-teal-500 focus:border-teal-500 block w-full p-2.5 dark:bg-gray-200 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-teal-500 dark:focus:border-teal-500"
                 type="email"
                 id="email"
                 name="email"
@@ -180,7 +158,8 @@ const UploadPrescription = () => {
               <div className="relative">
                 <input
                   onChange={handleChange}
-                  className="w-full p-2 bg-gray-20 border border-gray-300 text-gray-900 text-sm  focus:ring-teal-500 focus:border-teal-500 block w-full p-2.5 dark:bg-gray-200 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-teal-500 dark:focus:border-teal-500"
+                  value={formData.phone}
+                  className="bg-gray-20 border border-gray-300 text-gray-900 text-sm focus:ring-teal-500 focus:border-teal-500 block w-full p-2.5 dark:bg-gray-200 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-teal-500 dark:focus:border-teal-500"
                   type="tel"
                   id="tel"
                   name="phone"
@@ -204,7 +183,8 @@ const UploadPrescription = () => {
                 id="city"
                 name="city"
                 onChange={handleChange}
-                className="w-full p-2 bg-gray-20 border border-gray-300 text-gray-900 text-sm  focus:ring-teal-500 focus:border-teal-500 block w-full p-2.5 dark:bg-gray-200 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-teal-500 dark:focus:border-teal-500"
+                value={formData.city}
+                className="bg-gray-20 border border-gray-300 text-gray-900 text-sm focus:ring-teal-500 focus:border-teal-500 block w-full p-2.5 dark:bg-gray-200 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-teal-500 dark:focus:border-teal-500"
               >
                 <option value="">Select a city</option>
                 {cities.map((city) => (
@@ -224,7 +204,8 @@ const UploadPrescription = () => {
               </label>
               <input
                 onChange={handleChange}
-                className="w-full p-2 bg-gray-20 border border-gray-300 text-gray-900 text-sm  focus:ring-teal-500 focus:border-teal-500 block w-full p-2.5 dark:bg-gray-200 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-teal-500 dark:focus:border-teal-500"
+                value={formData.address}
+                className="bg-gray-20 border border-gray-300 text-gray-900 text-sm focus:ring-teal-500 focus:border-teal-500 block w-full p-2.5 dark:bg-gray-200 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-teal-500 dark:focus:border-teal-500"
                 type="text"
                 id="address"
                 name="address"
@@ -235,18 +216,18 @@ const UploadPrescription = () => {
 
             <div>
               <label
-                htmlFor="medicine"
+                htmlFor="medicine_name"
                 className="block mt-3 text-sm font-bold text-gray-500"
               >
                 Medicine/Product Name<span className="text-red-500">*</span>
               </label>
-
               <input
                 onChange={handleChange}
-                className="w-full p-2 bg-gray-20 border border-gray-300 text-gray-900 text-sm  focus:ring-teal-500 focus:border-teal-500 block w-full p-2.5 dark:bg-gray-200 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-teal-500 dark:focus:border-teal-500"
+                value={formData.medicine_name}
+                className="bg-gray-20 border border-gray-300 text-gray-900 text-sm focus:ring-teal-500 focus:border-teal-500 block w-full p-2.5 dark:bg-gray-200 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-teal-500 dark:focus:border-teal-500"
                 type="text"
-                id="medicine"
-                name="medicine"
+                id="medicine_name"
+                name="medicine_name"
                 placeholder="Medicine/Product Name"
                 required
               />
@@ -280,7 +261,8 @@ const UploadPrescription = () => {
               </label>
               <textarea
                 onChange={handleChange}
-                className="w-full p-10 bg-gray-20 border border-gray-300 text-gray-900 text-sm  focus:ring-teal-500 focus:border-teal-500 block w-full p-10 dark:bg-gray-200 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-teal-500 dark:focus:border-teal-500"
+                value={formData.definition}
+                className="bg-gray-20 border border-gray-300 text-gray-900 text-sm focus:ring-teal-500 focus:border-teal-500 block w-full p-2.5 dark:bg-gray-200 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-teal-500 dark:focus:border-teal-500"
                 id="definition"
                 name="definition"
               />
@@ -295,7 +277,7 @@ const UploadPrescription = () => {
           </form>
         </div>
       </div>
-      <h6 className=" font-bold mt-4 text-[#a10303] text-center">
+      <h6 className="font-bold mt-2 lg:mt-4 text-[#a10303] text-center">
         Note: For Any Urgent Requirements Please Call Us : +91 9319595621
       </h6>
     </div>

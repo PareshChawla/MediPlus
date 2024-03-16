@@ -305,6 +305,7 @@ const Products = () => {
 
         </div>
         <Pagination currentPage={currentPage} setCurrentPage={setCurrentPage} pages={pages} />
+        
       </div>
     </>
   );

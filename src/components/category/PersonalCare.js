@@ -83,7 +83,8 @@ const PersonalCare = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, /*setCurrentPage*/] = useState(1);
+  // eslint-disable-next-line
   const [postsPerPage, setPostsPerPage] = useState(12);
   const [selectedOption, setSelectedOption] = useState("Default sorting");
 
