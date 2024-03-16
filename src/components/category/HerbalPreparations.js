@@ -112,7 +112,7 @@ const HerbalPreparations = () => {
     <>
       <section className="bg-fixed relative grid place-items-center h-96 uppercase text-5xl font-bold bg-[url(/src/assets/images/blog_img.jpg)]">
         <div className="absolute top-0 left-0 w-full h-full opacity-50"></div>
-        <h2 className="text-white z-[2] text-center">Herbal Preparations</h2>
+        <h2 className="text-[#3470A1] z-[2] text-center">Herbal Preparations</h2>
       </section>
       <div className="container mx-auto p-6 md:p-12 lg:p-20">
         <Dropdown handleSortChange={handleSortChange} />
