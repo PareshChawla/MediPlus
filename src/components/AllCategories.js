@@ -26,7 +26,7 @@ const AllCategories = () => {
         <h1 className="text-4xl text-[#3470a1] font-bold">All Categories</h1>
         <div className="border-t-2 border-[#3470a1] w-[8%] ml-[46%] mt-7"></div>
       </div>
-      <div className="w-[70%] ml-[20%] md:ml-[15%] md:flex md:flex-row flex-col ">
+      <div className="w-full justify-center md:flex md:flex-row flex-col ">
         <AllCategoriesImg
           CategoryImg={BabyCare}
           to="/category/baby-care"
@@ -35,6 +35,7 @@ const AllCategories = () => {
         />
         <AllCategoriesImg
           CategoryImg={HB}
+          to="/category/herbal-preparations"
           CategoryText={"Herbal Preparations"}
           CategoryBtn={
             <Link to="/category/herbal-preparations">Herbal Preparations</Link>
@@ -42,11 +43,13 @@ const AllCategories = () => {
         />
         <AllCategoriesImg
           CategoryImg={PC}
+          to="/category/personal-care"
           CategoryText={"Personal Care"}
           CategoryBtn={<Link to="/category/personal-care">Personal Care</Link>}
         />
         <AllCategoriesImg
           CategoryImg={ED}
+          to="/category/energy-drinks"
           CategoryText={"Energy Drinks"}
           CategoryBtn={<Link to="/category/energy-drinks">Energy Drinks</Link>}
         />
