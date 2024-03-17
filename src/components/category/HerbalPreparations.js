@@ -83,8 +83,7 @@ const HerbalPreparations = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  // eslint-disable-next-line
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, /*setCurrentPage*/] = useState(1);
   // eslint-disable-next-line
   const [postsPerPage, setPostsPerPage] = useState(12);
   const [selectedOption, setSelectedOption] = useState("Default sorting");
@@ -111,9 +110,9 @@ const HerbalPreparations = () => {
 
   return (
     <>
-      <section className="bg-fixed relative grid place-items-center h-96 uppercase text-5xl font-bold bg-[url(/src/assets/images/medicine2.webp)]">
-        <div className="absolute top-0 left-0 w-full h-full opacity-50 bg-gradient-to-b from-[#0084D6] to-black"></div>
-        <h2 className="text-white z-[2] text-center">HerbalPreparations</h2>
+      <section className="bg-fixed relative grid place-items-center h-96 uppercase text-5xl font-bold bg-[url(/src/assets/images/blog_img.jpg)]">
+        <div className="absolute top-0 left-0 w-full h-full opacity-50"></div>
+        <h2 className="text-[#3470A1] z-[2] text-center">Herbal Preparations</h2>
       </section>
       <div className="container mx-auto p-6 md:p-12 lg:p-20">
         <Dropdown handleSortChange={handleSortChange} />
