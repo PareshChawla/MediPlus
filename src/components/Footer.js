@@ -7,7 +7,7 @@ import { MdEmail } from "react-icons/md";
 const Footer = () => {
   return (
     <>
-    <div className="w-full lg:flex lg:flex-row grid grid-cols-1 bg-[#333333] text-white p-5 px-20 justify-between">
+    <div className="w-full lg:flex lg:flex-row grid grid-cols-1 bg-[#333333] text-white p-5 px-14 justify-between">
       <div className="lg:w-[15%] w-full text-start pt-5">
         <img src={logo} alt="logo" />
         <p className="lg:text-base text-sm">
@@ -18,7 +18,7 @@ const Footer = () => {
       </div>
       <div className="text-sm lg:text-base pt-4 lg:pt-0">
         <h1 className="underline font-semibold pb-4">QUICK LINKS</h1>
-        <ul className="list-image-rightarrow">
+        <ul className="ml-4 list-image-rightarrow">
             <li className="hover:text-[#61CE70]"><Link to="/">Home</Link></li>
             <li className="hover:text-[#61CE70]"><Link to="/about">About Us</Link></li>
             <li className="hover:text-[#61CE70]"><Link to="/stores">Our Store</Link></li>
@@ -31,7 +31,7 @@ const Footer = () => {
       </div>
       <div className="text-sm lg:text-base pt-4 lg:pt-0">
         <h1 className="underline font-semibold pb-4">CATEGORY</h1>
-        <ul className="list-image-rightarrow">
+        <ul className="ml-4 list-image-rightarrow">
             <li className="hover:text-[#61CE70]"><Link to="/category/prescription">Prescription</Link></li>
             <li className="hover:text-[#61CE70]"><Link to="/category/feminine-care">Feminine Care</Link></li>
             <li className="hover:text-[#61CE70]"><Link to="/category/health-supplements">Health Supplements</Link></li>
