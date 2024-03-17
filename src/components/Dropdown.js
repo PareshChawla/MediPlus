@@ -4,6 +4,7 @@ const Dropdown = ({ handleSortChange }) => {
 
   const handleChange = (event) => {
     handleSortChange(event.target.value);
+
   };
 
   return (

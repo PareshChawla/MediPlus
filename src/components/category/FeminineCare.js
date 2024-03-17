@@ -18,62 +18,62 @@ const imageSource =[
   {
     src:Med1,
     name:"Carmesi Disposable Period Panties M-L (1×4) 1s",
-    price: "",
+    price: "10$",
   },
   {
     src:Med2,
     name:"Carmesi Facial Razor For Women (1×3) 1s",
-    price: "",
+    price: "12$",
   },
   {
     src:Med3,
     name:"Carmesi Panty Liners (1×60) 1s",
-    price: "",
+    price: "6$",
   },
   {
     src:Med4,
     name:"Carmesi Sensitive Sanitary Pads Rash Free (1×10) 1s",
-    price: "",
+    price: "8$",
   },
   {
     src:Med5,
     name:"Good Vibes Brightening Face Serum Vitamin C 30ml",
-    price: "",
+    price: "15$",
   },
   {
     src:Med6,
     name:"Hi Life Intimate Hygiene Spray (480 Spray) 60ml",
-    price: "",
+    price: "9$",
   },
   {
     src:Med7,
     name:"Hi Life Silica Drops 1200 Drops 60ml",
-    price: "",
+    price: "11$",
   },
   {
     src:Med8,
     name:"Hi Life Organic Periods Pads (1X10) 1s",
-    price: "",
+    price: "13$",
   },
   {
     src:Med9,
     name:"Hi Life Organic Panty Liners With Wings (1X24) 1s",
-    price: "",
+    price: "18$",
   },
   {
     src:Med10,
     name:"Hi Life Organic Period Pads (1×8) 1s",
-    price: "",
+    price: "17$",
   },
   {
     src:Med11,
     name:"Sofy Bodyfit Pads 16s",
-    price: "",
+    price: "20$",
   },
   {
     src:Med12,
     name:"Sofy Bodyfit Pads Anti Bacteria XL",
-    price: "",
+    price: "30$",
   },
 ]
 
@@ -93,10 +93,12 @@ const FeminineCare = () => {
     setSelectedOption(selectedValue);
   };
 
+
   if (selectedOption === "Sort by price: low to high") {
     imageSource.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
   } else if (selectedOption === "Sort by price: high to low") {
     imageSource.sort((a, b) => parseFloat(b.price) - parseFloat(a.price));
+  } else if (selectedOption === "Default sorting") {
   }
 
   const lastPostIndex = postsPerPage * currentPage;
