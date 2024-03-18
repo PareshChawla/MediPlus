@@ -10,7 +10,6 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 
 const Health11 = () => {
-
   useEffect(() => {
     window.scrollTo(0, 0);
     fetchComments();
@@ -39,7 +38,6 @@ const Health11 = () => {
       [name]: value,
     });
   };
-
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -77,7 +75,7 @@ const Health11 = () => {
 
   return (
     <>
-      <section className="relative grid place-items-center h-80 bg-[#F2F7F6] w-full">
+      <section className="px-5 relative grid place-items-center h-80 bg-[#F2F7F6] w-full">
         <div className="flex flex-col items-center justify-center w-full">
           <header className="text-4xl font-bold text-[#3470a1] flex items-center justify-center">
             Six Things About High Blood Pressure You Should Know
@@ -102,7 +100,7 @@ const Health11 = () => {
         </div>
       </section>
 
-      <div className="mt-5 mx-auto max-w-4xl ">
+      <div className=" px-6 mt-11 mx-auto  max-w-5xl ">
         <div className="text-center">
           <img
             className="mx-auto w-full bg-white object-contain mt-5"
@@ -148,7 +146,7 @@ const Health11 = () => {
         </ul>
         <div className="text-center">
           <img
-            className="mx-auto w-full bg-white object-contain mt-5"
+            className="mx-auto bg-white object-contain mt-5 "
             src={blogimg_11}
             alt="mediplus"
           />
@@ -213,14 +211,21 @@ const Health11 = () => {
           </a>
         </div>
 
-        <div className="py-20 flex flex-col items-left ml-11">
+        <div className="mx-5 py-20 flex flex-col items-left ">
           <h2 className="text-lg font-semibold text-[#3470a1] mb-2">
             Leave a Reply
           </h2>
 
-          <form id="postComment" onSubmit={handleSubmit} className="flex flex-col items-start">
+          <form
+            id="postComment"
+            onSubmit={handleSubmit}
+            className="flex flex-col items-start"
+          >
             <div className="mb-4">
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="name"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Name<span className="text-red-500">*</span>
               </label>
               <input
@@ -234,7 +239,10 @@ const Health11 = () => {
               />
             </div>
             <div className="mb-4">
-              <label htmlFor="comment" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="comment"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Feedback
               </label>
               <textarea
@@ -242,8 +250,9 @@ const Health11 = () => {
                 value={formData.comment}
                 id="comment"
                 name="comment"
-                rows="3"
-                className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-[500px] shadow-sm sm:text-sm border-gray-300 rounded-md"
+                rows="4"
+                cols="60"
+                className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
               ></textarea>
             </div>
 
@@ -263,16 +272,16 @@ const Health11 = () => {
 
           {/* Display submitted comments */}
           {comments.map((comment, index) => (
-            <div key={index} className="bg-gray-100 p-4 mt-4 rounded-md mb-5 ml-11">
+            <div
+              key={index}
+              className="bg-gray-100 p-4 mt-4 rounded-md mb-5 ml-11"
+            >
               <h3 className="text-lg font-semibold">{comment.name}</h3>
               <p>{comment.comment}</p>
             </div>
           ))}
         </div>
-
-
-
-      </div >
+      </div>
     </>
   );
 };

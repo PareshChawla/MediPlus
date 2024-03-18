@@ -24,7 +24,7 @@ const DermaCosmetics = () => {
     <>
       <section className="bg-fixed relative grid place-items-center h-96 uppercase text-5xl font-bold bg-[url(/src/assets/images/blog_img.jpg)]">
         <div className="absolute top-0 left-0 w-full h-full opacity-50 "></div>
-        <h2 className="text-[#3470A1] z-[2]">Derma Cosmetics</h2>
+        <h2 className="text-[#3470A1] z-[2] text-center">Derma Cosmetics</h2>
       </section>
       <div className="container mx-auto p-40 md:flex-row">
         <h1 className="text-4xl font-bold mb-4 text-center text-[#3470a1]">No products were found matching your selection.</h1>

@@ -43,7 +43,7 @@ const Contact = () => {
         <div className="absolute top-0 left-0 w-full h-full opacity-50 bg-gradient-to-b from-[#0084D6] to-black"></div>
         <h2 className="text-white z-[2]">Contact Us</h2>
       </section>
-      <div className="m-5 my-10 lg:px-20 p-5 grid lg:grid-cols-3 gap-10 flex justify-center">
+      <div className="m-5 my-10 lg:px-20 p-5 grid lg:grid-cols-3 gap-10 justify-center">
         <ContactCard
           title={'Physical Address'}
           logo={<FaLocationDot size={60} color="#6CB250" />}
