@@ -48,6 +48,8 @@ const HealthcareDevices = () => {
     imageSource.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
   } else if (selectedOption === "Sort by price: high to low") {
     imageSource.sort((a, b) => parseFloat(b.price) - parseFloat(a.price));
+  } else if(selectedOption === "Default sorting"){
+
   }
 
   const lastPostIndex = postsPerPage * currentPage;
