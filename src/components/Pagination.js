@@ -5,6 +5,7 @@ const Pagination = ({ pages, setCurrentPage, currentPage }) => {
 const handlePageChange = (pageNumber) => {
   setCurrentPage(pageNumber);
   console.log(currentPage)
+   window.scrollTo(0, 0); 
 };
   return (
     <div className="flex justify-center items-center flex-wrap">

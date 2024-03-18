@@ -42,6 +42,7 @@ const HealthcareDevices = () => {
   const handleSortChange = (selectedValue) => {
     setSelectedOption(selectedValue);
   };
+  
 
   if (selectedOption === "Sort by price: low to high") {
     imageSource.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
