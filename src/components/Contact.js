@@ -46,17 +46,17 @@ const Contact = () => {
       <div className="m-5 my-10 lg:px-20 p-5 grid lg:grid-cols-3 gap-10 justify-center">
         <ContactCard
           title={'Physical Address'}
-          logo={<FaLocationDot size={60} color="#6CB250" />}
+          logo={<FaLocationDot size={60} color="" />}
           content={'3rd Floor, The Corenthum, India Accelerator, Sector 62, Noida, Uttar Pradesh 201301'}
         />
         <ContactCard
           title={'Email address'}
-          logo={<HiOutlineMailOpen size={60} color="#6CB250" />}
+          logo={<HiOutlineMailOpen size={60} color="" />}
           content={'tech@entrepreneurshipnetwork.net'}
         />
         <ContactCard
           title={'Phone Number'}
-          logo={<FaPhoneAlt size={60} color="#6CB250" />}
+          logo={<FaPhoneAlt size={60} color="" />}
           content={'+91  7498232799'}
         />
       </div>
