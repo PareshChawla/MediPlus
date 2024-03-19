@@ -61,7 +61,7 @@ const Header = () => {
           </Link>
         </div>
 
-        <ul className="hidden lg:flex gap-8 font-semibold mr-20 text-sm cursor-pointer">
+        <ul className="hidden lg:flex gap-6 font-semibold mr-4 text-sm cursor-pointer whitespace-nowrap">
           <Link to="/">
             <li className="hover:text-blue-400">HOME</li>
           </Link>
@@ -82,12 +82,12 @@ const Header = () => {
           </Link>
         </ul>
         <Link className="hidden md:block" to="/upload">
-          <h1 className="font-semibold text-red-500 mr-10 hover:text-green-500 cursor-pointer">
+          <h1 className="font-semibold text-red-500 mr-5 hover:text-green-500 cursor-pointer ">
             Upload Prescription
           </h1>
         </Link>
         <div className="flex gap-5 mr-5">
-          <div className="mr-3 cursor-pointer" onClick={handleSearchClick}>
+          <div className="mr-3 cursor-pointer " onClick={handleSearchClick}>
             <RiSearchLine size={20} />
           </div>
           <div className="gap-5 hidden md:flex">
